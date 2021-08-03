@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	
+	<meta property="og:title" content="Расписание занятий"/>
+	<meta property="og:description" content="Официальный сайт АК «Академический колледж»"/>
+	<meta property="og:url" content= "http://academicol.ru/students/schedule/" />
+	
+	<meta name="yandex-verification" content="4359ce82af64bb7c">
+	<meta name="google-site-verification" content="k3CFAuSC51X3muQIhG-6vjJuuuwCAGNMKQe7qfzAKOA">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+	
+	<meta name="robots" content="index, follow" />
+		
+	<title>Расписание занятий</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, nofollow" />
+<meta name="keywords" content="ВИБ, ВКБ, институт, колледж, обучение, бизнес, элита, Ректор Ващенко Андрей Александрович, Приёмная комиссия, Волгоградский институт бизнеса, девятиклассник, учеба, обучение, образование, специальности, бакалавр, бакалавриат, магистратура, аспирантура, училище, поступление, экзамены, профессии, абитуриент, школьник, вузы, диплом" />
+<meta name="description" content="Официальный сайт АК «Академический колледж»" />
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic" type="text/css"  rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lora:400,700&amp;subset=cyrillic" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/cache/css/s1/vib/kernel_main/kernel_main.css?162651780044397" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/cache/css/s1/vib/template_d433da1a53625590b174f12e7ef653b1/template_d433da1a53625590b174f12e7ef653b1_33712c78595d9fa74713295fe75a4eb2.css?1626215281354101" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<script type="text/javascript">if(!window.BX)window.BX={message:function(mess){if(typeof mess=='object') for(var i in mess) BX.message[i]=mess[i]; return true;}};</script>
+<script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+<script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'SESSION','SERVER_TZ_OFFSET':'10800','SITE_ID':'s1','USER_ID':'','SERVER_TIME':'1627908426','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'20f3f57b7ff48af4009fbbb17e9c8396'});</script>
+
+
+<script type="text/javascript" src="/bitrix/cache/js/s1/vib/kernel_main/kernel_main.js?1626517800375333"></script>
+<script type="text/javascript" src="/bitrix/js/main/jquery/jquery-1.8.3.min.js?162621353293636"></script>
+<script type="text/javascript">BX.setCSSList(['/bitrix/js/main/core/css/core.css','/bitrix/js/main/core/css/core_tooltip.css','/bitrix/js/main/core/css/core_popup.css','/bitrix/js/main/core/css/core_date.css','/bitrix/templates/vib/css/font-awesome.min.css','/bitrix/templates/vib/css/icomoon.css','/bitrix/templates/vib/css/normalize.css','/bitrix/templates/vib/css/default.css','/bitrix/templates/vib/js/slick/slick.css','/bitrix/templates/vib/js/slick/slick-theme.css','/bitrix/templates/vib/css/animate.css','/bitrix/templates/vib/js/jqueryui/jquery-ui.css','/bitrix/templates/vib/css/badFont.css','/bitrix/templates/vib/css/badFont-vib.css','/bitrix/templates/vib/css/persformchecker.css','/bitrix/templates/vib/css/magnific-popup.css','/bitrix/templates/vib/css/style.css','/bitrix/templates/vib/js/dist/jquery.fancybox.min.css','/bitrix/templates/.default/components/bitrix/menu/top/style.css','/bitrix/templates/.default/components/bitrix/news.list/slider_Information_resources/style.css','/bitrix/templates/.default/components/bitrix/menu/bottom/style.css','/bitrix/templates/vib/styles.css','/bitrix/templates/vib/template_styles.css']); </script>
+<script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core.js','/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/session.js','/bitrix/js/main/json/json2.min.js','/bitrix/js/main/core/core_ls.js','/bitrix/js/main/core/core_window.js','/bitrix/js/main/utils.js','/bitrix/js/main/core/core_tooltip.js','/bitrix/js/main/core/core_popup.js','/bitrix/js/main/core/core_date.js','/bitrix/js/main/dd.js']); </script>
+
+<script type="text/javascript">
+bxSession.Expand(1440, '20f3f57b7ff48af4009fbbb17e9c8396', false, '844ced6f7f04134fbe7963336eaeba93');
+</script>
+<script>new Image().src='http://volbi.ru/bitrix/spread.php?s=U0VTU0lPTl9HVUVTVF9JRAEzMTQwNzg5ATE2NTkwMTI0MjYBLwEBAQJTRVNTSU9OX0xBU1RfVklTSVQBMDIuMDguMjAyMSAxNTo0NzowNgExNjU5MDEyNDI2AS8BAQEC&k=ad0643f92c336cbe944cd33b2e1c43eb';
+new Image().src='http://en.vib.bitrix.clickon.ru/bitrix/spread.php?s=U0VTU0lPTl9HVUVTVF9JRAEzMTQwNzg5ATE2NTkwMTI0MjYBLwEBAQJTRVNTSU9OX0xBU1RfVklTSVQBMDIuMDguMjAyMSAxNTo0NzowNgExNjU5MDEyNDI2AS8BAQEC&k=ad0643f92c336cbe944cd33b2e1c43eb';
+</script>
+
+<script type="text/javascript" src="/bitrix/cache/js/s1/vib/template_2cc356afd116850c09443edd5c48c343/template_2cc356afd116850c09443edd5c48c343_963ca168855b2c3690c147e806da92b9.js?1626215281465222"></script>
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+	
+																	
+	
+	<!--[if lt IE 9]>
+	   <link rel="stylesheet" type="text/css" href="/bitrix/templates/vib/css/ie.css"/>
+    <![endif]-->
+	<!--[if lt IE 9]>
+		<script src="/bitrix/templates/vib/js/html5shiv.js" type="text/javascript"></script>
+		<script src="/bitrix/templates/vib/js/msie.js" type="text/javascript"></script>
+	<![endif]-->
+	
+	
+	
+									
+	
+					
+
+</head>
+<body>
+
+
+	<div id="panel"></div>
+	
+	<div class="wrapper">
+		<header>
+			<div class="container">
+				<div  class="logo">
+
+											<a href="/">
+										
+					<img width="130" alt="14.png" src="/upload/medialibrary/f45/f4598be371bbe08127974ad6a4db2cf2.png" height="auto" title="14.png">					<strong>
+						Академический колледж					</strong>
+						<span><b>Академический колледж, новое имя колледжа бизнеса, знаменитой «Копейки». 80 лет в ногу со временем.</b><br>
+ Свидетельство о государственной аккредитации серия 34А01 № 0001649,<br>
+ регистрационный № 17 от 17.05.2019 г. <br>
+ Лицензия на право ведения образовательной деятельности серия 34Л01 № 0002078, регистрационный № 76 от 28.12.2020 г. <br>
+ </span>
+											</a>
+					
+				</div>
+				<div style="margin-left: 60px; margin: 20px; float: left;position: relative;">
+					<div>
+ <br>
+ <a href="tel://8442599800" style="color:#ba0b73;"><b>ТЕЛ: (8442) 599-800</b></a>
+</div>
+ <br>
+<a href="https://academic-college.ru/documents-send"><img alt="buttons_PNG28.png" src="/img/lkb.jpg" title="подать заявление онлайн" align="middle" style="width: 150px;height: auto;"></a> <br></div>	
+				
+				<div class="top-vuz">
+									</div>
+				<div class="top-icons">
+					
+<ul class="socials">
+	<li><a href="https://vk.com/vib_acc" target="_blank" title="В контакте"><i class="icon-vk"></i></a></li>
+	<li><a href="https://www.instagram.com/ac_vlg/" target="_blank" title="instagram" class="icon-insttagram"><i></i></a></li>
+</ul>					<a href="#" class="eye-btn"><i class="icon-eye" aria-hidden="true"></i>Версия<br/>для слабовидящих</a>
+				</div>
+			</div>
+		</header>
+
+		<div class="menu-wrap">
+			<div class="container">
+				<div class="auth-wrap">
+											<a href="http://lk.academicol.ru" class="profile" title="В личный кабинет"><i class="icon-login"></i></a>
+										<!-- <a href="#" class="profile" title="В личный кабинет"><i class="fa fa-user"></i></a>-->   <!-- Если залогиненный, то такая ссылка и отсутствует нижеследующий блок с формой авторизации -->
+					<!--<div class="auth-form-wrap">
+						<div class="container">
+							<div class="auth-form">
+								<div class="form-title">
+									Вход в личный кабинет
+								</div>
+								<form name="form_auth" method="post" target="_top" action="/lichnyy-kabinet/?login=yes">
+								
+									<input type="hidden" name="AUTH_FORM" value="Y">
+									<input type="hidden" name="TYPE" value="AUTH">
+									<input type="hidden" name="backurl" value="/lichnyy-kabinet/">
+									<input type="hidden" name="AUTH_FORM" value="Y">
+									<input type="hidden" name="TYPE" value="AUTH">
+										<input type="hidden" name="Login" value="Войти">
+											
+									<div class="f_left">
+										<div class="form-group">
+											<input type="text" name="USER_LOGIN" maxlength="50" value="" size="17" placeholder="Логин"/>
+										</div>
+										<div class="form-group">
+											<input type="password" name="USER_PASSWORD" maxlength="50" size="17" placeholder="Пароль"/>
+										</div>
+										<div class="check-wrap">
+											<input type="checkbox" id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y"/>
+											<label for="remember">Запомнить меня</label>
+										</div>
+										<div class="auth-links">
+											<a href="/lichnyy-kabinet/?forgot_password=yes">Забыли свой пароль?</a>
+											<a href="/lichnyy-kabinet/?register=yes">Регистрация</a>
+										</div>
+									</div>
+									<div class="btn-line">
+										<input  type="submit" name="Login" class="btn btn-blue" value="Войти"/>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<div class="search-wrap">
+					<a href="#" class="search-toggle"><i class="fa fa-search"></i></a>
+					<div class="search-form-wrap">
+						<div class="container">
+							<div class="inner">
+								<div class="search-form">
+									<a href="#" class="close-search"><span></span></a>
+									
+
+<form action="/search/index.php">
+	
+	<div class="form-group">
+		<input type="text" name="q" value="" placeholder="Найти"/>
+	</div>
+	<div class="btn-line">
+		<span class="icon"><i class="fa fa-search"></i></span>
+		<input type="submit" name="s" class="fa fa-search" value=""/>
+	</div>
+</form>
+									<!--<form action="#">
+										<div class="form-group">
+											<input type="text" placeholder="Найти"/>
+										</div>
+										<div class="btn-line">
+											<span class="icon"><i class="fa fa-search"></i></span>
+											<input type="submit" class="fa fa-search" value=""/>
+										</div>
+									</form>-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+<nav class="menu">
+	<a href="#" class="nav-btn-mobile"><span></span></a>
+	<ul>
+									<li class="ddown "><a href="#">Абитуриенту</a>
+					<div class="submenu-container">
+						<div class="container">
+							<ul class="submenu">
+																<li >
+										<a href="/kak-stat-nashim-studentom/">Как стать нашим студентом</a>
+								</li>
+																<li >
+										<a href="/den-tvoikh-perspektiv/">День открытых дверей</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/">О нас</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide1">Cпециальности</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide2">Обучение за счёт гранта губернатора</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide3">Информация и нормативные документы по приему на обучение</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide8">Сведения о количестве поданных заявлений на обучение</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide5">Приказы о зачислении</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide6">Обращения граждан связанные с приемом</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/abiturientu/?showhide7">Контакты приемной комиссии</a>
+								</li>
+																<li >
+										<a href="/priem-v-kolledzh/informatsiya-dlya-inostrannykh-grazhdan/">Информация для иностранных граждан</a>
+								</li>
+																<li >
+										<a href="https://academic-college.ru/documents-send">Подать документы (online)</a>
+								</li>
+															</ul>
+						</div>
+					</div>
+				</li>
+
+
+												<li class="ddown active"><a href="#">Студенту</a>
+					<div class="submenu-container">
+						<div class="container">
+							<ul class="submenu">
+																<li active>
+										<a href="/students/schedule/">Расписание</a>
+								</li>
+																<li active>
+										<a href="/students/dist/">Площадка дистанционного обучения</a>
+								</li>
+																<li active>
+										<a href="/students/studencheskaya-zhiz">Студенческая жизнь</a>
+								</li>
+																<li active>
+										<a href="http://volbi.ru/lichnyy-kabinet/">Личный кабинет студента</a>
+								</li>
+																<li active>
+										<a href="/students/o-merakh-po-preduprezhdeniyu-rasprostraneniya-koronavirusnoy-infektsii/">Информация по COVID-19 для студентов и родителей (законных представителей) АНПОО “Академический колледж”</a>
+								</li>
+																<li active>
+										<a href="https://academicol.ru/demonstratsionnyy-ekzamen.php">Демонстрационный экзамен</a>
+								</li>
+															</ul>
+						</div>
+					</div>
+				</li>
+
+
+												<li class="ddown "><a href="#">Общие сведения</a>
+					<div class="submenu-container">
+						<div class="container">
+							<ul class="submenu">
+																<li >
+										<a href="/common/contacts/">Контакты</a>
+								</li>
+																<li >
+										<a href="/common/bankovskie-rekvizity-dlya-oplaty-obucheniya">Оплата за обучение</a>
+								</li>
+																<li >
+										<a href="/common/faculties">Кафедры</a>
+								</li>
+																<li >
+										<a href="/common/elektronno-bibliotechnaya-sistema">Электронно-библиотечная система</a>
+								</li>
+																<li >
+										<a href="/news/">Новости</a>
+								</li>
+																<li >
+										<a href="/photos/">Фотогалерея</a>
+								</li>
+																<li >
+										<a href="/videos/">Видеогалерея</a>
+								</li>
+																<li >
+										<a href="/common/inklyuzivnoe-obrazovanie/">Инклюзивное образование</a>
+								</li>
+																<li >
+										<a href="/common/profilaktika-ekstremizma">Профилактика экстремизма</a>
+								</li>
+																<li >
+										<a href="/common/antikorruptsionnaya-politika.php">Антикоррупционная политика</a>
+								</li>
+																<li >
+										<a href="/common/informatsionnaya-bezopasnost.php">Информационная безопасность</a>
+								</li>
+															</ul>
+						</div>
+					</div>
+				</li>
+
+
+												<li class="ddown "><a href="#">Среда дистанционного обучения</a>
+					<div class="submenu-container">
+						<div class="container">
+							<ul class="submenu">
+																<li >
+										<a href="http://do.academicol.ru/">Вход</a>
+								</li>
+																<li >
+										<a href="/acad-do/?showhide2">Дистанционное обучение в Академическом колледже</a>
+								</li>
+																<li >
+										<a href="/acad-do/?showhide3">Как проходит обучение</a>
+								</li>
+																<li >
+										<a href="/acad-do/?showhide4">Этапы обучения</a>
+								</li>
+																<li >
+										<a href="/acad-do/?showhide5">Cпециальности</a>
+								</li>
+																<li >
+										<a href="/acad-do/ast-test.php">Аст-тест</a>
+								</li>
+															</ul>
+						</div>
+					</div>
+				</li>
+
+
+												<li class=""><a href="/sveden/">Сведения об образовательной организации</a></li>
+						</ul>
+</nav>
+
+			</div>
+		</div>
+
+	<div class="section gray-bg breadcrumb-back">
+		<div class="container">
+						<h1>Расписание занятий</h1>
+	   	</div>
+	</div>
+
+
+
+
+<div class="section emblem-bg"><div class="container">
+
+
+
+<p style="text-align: center;">
+</p>
+ &nbsp;
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+ 
+ <style>
+  .zvonki__content {
+      text-align: left!important;
+  }
+  .zvonki__container, .zvonki__content {
+	  width: 100%;
+  }
+  .tdschedule {
+	  height: 3rem;
+  }
+
+ </style>
+<div class="zvonki__container">
+	<div class="zvonki__content" >
+ <br>
+ <br>
+ <br>
+		<div class="table_normativnaja_dokumentacija">
+			<p style="color: #fff; text-align: center">
+ <b>Очная форма обучения:</b>
+			</p>
+			<p style="color: #fff;">
+				 <table class="table_normativnaja_dokumentacija"><tr><th nowrap width='20'>*</th>
+	<th>Название файла</th>
+	<th width='85'>Размер</th>
+	<th nowrap width='165'>Дата добавления</th></tr><tr><td class="tdschedule" style="text-align:center;background-color:#FFFFFF;color:#000;" colspan="6">Документы не найдены</td></tr></table>			</p>
+			<p style="color: #fff; text-align: center">
+ <b>Заочная форма обучения:</b>
+			</p>
+			<p style="color: #fff;">
+				 <table class="table_normativnaja_dokumentacija"><tr><th nowrap width='20'>*</th>
+	<th>Название файла</th>
+	<th width='85'>Размер</th>
+	<th nowrap width='165'>Дата добавления</th></tr><tr><td class="tdschedule" style="text-align:center;background-color:#FFFFFF;color:#000;" colspan="6">Документы не найдены</td></tr></table>			</p>
+		</div>
+ <br>
+	</div>
+</div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+</div></div>
+
+<script type="text/javascript">$("ul").remove(".fmenu");</script>
+
+	
+<div class="section">
+	<div class="container">
+		<h3 id="bx_1195527436_2732">
+			Информационные ресурсы		</h3>
+		<div class="resources-carousel">
+											<div class="item" id="bx_1195527436_58851">
+					<a href="http://school-collection.edu.ru/">
+						<span class="img"><img src="/upload/iblock/2da/2da3bafb57f267a82b6175630ebd7822.jpg" alt="Еди­ная кол­лек­ция циф­ро­вых об­ра­зо­ва­тель­ных ре­сур­сов"/></span> <!-- Максимальная высота картинки - 110px -->
+						<span class="desc">Еди­ная кол­лек­ция циф­ро­вых об­ра­зо­ва­тель­ных ре­сур­сов</span>
+					</a>
+				</div>
+											<div class="item" id="bx_1195527436_58852">
+					<a href="http://school-collection.edu.ru/">
+						<span class="img"><img src="/upload/iblock/8cd/8cd734e57d4153efa5e8649cbfb1397d.jpg" alt="Еди­ная кол­лек­ция циф­ро­вых об­ра­зо­ва­тель­ных ре­сур­сов"/></span> <!-- Максимальная высота картинки - 110px -->
+						<span class="desc">Еди­ная кол­лек­ция циф­ро­вых об­ра­зо­ва­тель­ных ре­сур­сов</span>
+					</a>
+				</div>
+											<div class="item" id="bx_1195527436_59361">
+					<a href="http://минобрнауки.рф/">
+						<span class="img"><img src="/upload/iblock/452/4527a102c6e88a71a95ea9d1a23c4256.jpg" alt="Ми­ни­стер­ство об­ра­зо­ва­ния и на­у­ки РФ"/></span> <!-- Максимальная высота картинки - 110px -->
+						<span class="desc">Ми­ни­стер­ство об­ра­зо­ва­ния и на­у­ки РФ</span>
+					</a>
+				</div>
+											<div class="item" id="bx_1195527436_59360">
+					<a href="http://www.edu.ru/">
+						<span class="img"><img src="/upload/iblock/5d9/5d948b95e18bcf8bd9145d5cedfbca59.jpg" alt="Фе­де­раль­ный пор­тал Рос­сий­ское об­ра­зо­ва­ние "/></span> <!-- Максимальная высота картинки - 110px -->
+						<span class="desc">Фе­де­раль­ный пор­тал Рос­сий­ское об­ра­зо­ва­ние </span>
+					</a>
+				</div>
+											<div class="item" id="bx_1195527436_58853">
+					<a href="http://fssprus.ru/iss/ip/">
+						<span class="img"><img src="/upload/iblock/d9d/d9ddda583e0e8f6be6aaf90963396f31.jpg" alt="Банк данных исполнительных производств "/></span> <!-- Максимальная высота картинки - 110px -->
+						<span class="desc">Банк данных исполнительных производств </span>
+					</a>
+				</div>
+					</div>
+	</div>
+</div>
+		<div class="wrapper-push"></div>
+	</div>
+
+	<footer>
+		<div class="f-top">
+			<div class="container">
+				<div class="fcol" itemscope itemtype="http://schema.org/Organization">
+					<div class="f-address">
+						<p>
+ <span style=" color: #ffffff;">АНПОО "Академический колледж" © 2021</span>
+</p>
+<p>
+ <span style="color: #ffffff; ">400010, г. Волгоград, ул. Качинцев, 63</span><span style="color: #ffffff;">&nbsp;&nbsp;&nbsp;</span><br>
+</p>					</div>
+					<div class="f-phones">
+						<div class="fhead">
+	 Приемная комиссия
+</div>
+<p>
+ <span itemprop="telephone">8-800-5511087, 59-98-00</span><br>
+ <a href="mailto:pk@volbi.ru"><span itemprop="email">pk@volbi.ru</span></a>
+</p>						<div class="fhead">
+	Приемная директора
+</div>
+<p>+7 (8442) 52-73-53 <br/></p>
+					</div>
+					
+				</div>
+				
+
+														<div class="fcol">
+						<div class="fhead upcase">
+							<a href="/priem-v-kolledzh/">Абитуриенту</a>
+						</div>
+						<ul class="fmenu">
+															<li>
+									<a href="/kak-stat-nashim-studentom/">Как стать нашим студентом</a>
+								</li>
+															<li>
+									<a href="/den-tvoikh-perspektiv/">День открытых дверей</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/">О нас</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide1">Cпециальности</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide2">Обучение за счёт гранта губернатора</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide3">Информация и нормативные документы по приему на обучение</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide8">Сведения о количестве поданных заявлений на обучение</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide5">Приказы о зачислении</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide6">Обращения граждан связанные с приемом</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/abiturientu/?showhide7">Контакты приемной комиссии</a>
+								</li>
+															<li>
+									<a href="/priem-v-kolledzh/informatsiya-dlya-inostrannykh-grazhdan/">Информация для иностранных граждан</a>
+								</li>
+															<li>
+									<a href="https://academic-college.ru/documents-send">Подать документы (online)</a>
+								</li>
+													</ul>
+
+											</div>
+				
+																							<div class="fcol">
+											<div class="fcol-part">
+							<div class="fhead upcase">
+								<a href="/students/">Студенту</a>
+							</div>
+							
+						</div>
+														
+																	<div class="fcol">
+						<div class="fhead upcase">
+							<a href="/common/">Общие сведения</a>
+						</div>
+						<ul class="fmenu">
+															<li>
+									<a href="/common/contacts/">Контакты</a>
+								</li>
+															<li>
+									<a href="/common/bankovskie-rekvizity-dlya-oplaty-obucheniya">Оплата за обучение</a>
+								</li>
+															<li>
+									<a href="/common/faculties">Кафедры</a>
+								</li>
+															<li>
+									<a href="/common/elektronno-bibliotechnaya-sistema">Электронно-библиотечная система</a>
+								</li>
+															<li>
+									<a href="/news/">Новости</a>
+								</li>
+															<li>
+									<a href="/photos/">Фотогалерея</a>
+								</li>
+															<li>
+									<a href="/videos/">Видеогалерея</a>
+								</li>
+															<li>
+									<a href="/common/inklyuzivnoe-obrazovanie/">Инклюзивное образование</a>
+								</li>
+															<li>
+									<a href="/common/profilaktika-ekstremizma">Профилактика экстремизма</a>
+								</li>
+															<li>
+									<a href="/common/antikorruptsionnaya-politika.php">Антикоррупционная политика</a>
+								</li>
+															<li>
+									<a href="/common/informatsionnaya-bezopasnost.php">Информационная безопасность</a>
+								</li>
+													</ul>
+
+											</div>
+				
+																							<div class="fcol-part">
+							<div class="fhead upcase">
+								<a href="/acad-do/">Среда дистанционного обучения</a>
+							</div>
+							
+						</div>
+											</div>
+														
+																</ul>
+</nav>
+			</div>
+		</div>
+		
+	</footer>
+
+	<div class="form-result-open"></div>
+	<div class="form-result" data-name="feedback">
+		<div class="back-result">
+			<div class="content-result">
+			</div>
+		</div>
+	</div>
+	
+	<div id="policyAgreeHint">
+	    <div id="policyAgreeHintContent">
+	        Оставляя свои персональные данные, Вы даете добровольное согласие на обработку своих персональных данных. Под персональными данными понимается любая информация, относящаяся к Вам, как субъекту персональных данных (ФИО, дата рождения, город проживания, адрес, контактный номер телефона, адрес электронной почты, род занятости и пр). Ваше согласие распространяется на осуществление ЧОУ ВО «Волгоградский институт бизнеса» любых действий в отношении ваших персональных данных, которые могут понадобиться для сбора, систематизации, хранения, уточнения (обновление, изменение), обработки (например, отправки писем или совершения звонков) и т.п. с учетом действующего законодательства. Согласие на обработку персональных данных даётся без ограничения срока, но может быть отозвано Вами (достаточно сообщить об этом в ЧОУ ВО «Волгоградский институт бизнеса»). Пересылая в ЧОУ ВО «Волгоградский институт бизнеса» свои персональные данные, Вы подтверждаете, что с правами и обязанностями в соответствии с Федеральным законом «О персональных данных» ознакомлены.
+	        <br>
+	        <br>
+	        <p class="ta-center"><button class="button" id="policyAgreeClose">Закрыть</button></p>
+	    </div>
+	</div>
+	<link rel="stylesheet" href="https://cdn.envybox.io/widget/cbk.css">
+	<script type="text/javascript" src="https://cdn.envybox.io/widget/cbk.js?wcb_code=653f616813509d9cf5fe0fae2635e9c4" charset="UTF-8" async></script>
+</body>
+</html>
