@@ -33,12 +33,12 @@ weekday_range = range(4, 100) #для поиска дня недели
 length_list = (3, 5) # сколько может быть пар в один день  с учетом пустых ячеек
 
 # получаем день недели
-liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+#liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+liva_weekday = input('Введите день недели:')
 if liva_weekday == 'Воскресенье':
     liva_weekday = 'Понедельник'
     
 weekly_schedule = []
-
 for number in a: #цифры/строки
     for key in a_dict: #буквы/столбцы
         if type(sheet[key + str(number)].value) != type(None): #если ячейка не пустая
@@ -60,13 +60,13 @@ for number in a: #цифры/строки
                                             for number_day_next in next_weekday_range: #пробегаем в цикле по ячейки для поиска след дня недели
                                                 if type(sheet[key + str(number_day_next)].value) != type(None): #если ячейка не пустая
                                                     if day_next in sheet[key + str(number_day_next)].value: #Нашли завтрашний день недели
-                                                       
+                                                        
                                                         list_object = range(number_day+1, number_day_next) #от сегодняшнего дня недели до завтрашнего
                                                         name = []
                                                         time = []
                                                         for obj in list_object:
                                                             if type(sheet[key + str(obj)].value) != type(None):
-
+                                                                
                                                                 #ФАМИЛИИ | NAME
                                                                 s = sheet[key + str(obj)].value # найденные ячейки с парами
                                                                 weekly_schedule.append(s) # заполянем список парами
@@ -76,7 +76,6 @@ for number in a: #цифры/строки
                                                                 #ВРЕМЯ | TIME
                                                                 patterTIME = r'[0-9][0-9]\:[0-9][0-9]'
                                                                 time.append(re.findall(patterTIME, s))
-                                                        
                                                         
                                                         #ФОРМАТИРУМ МАТРИЦУ С ФАМИЛИЯМИ
                                                         name = ([x for x in name if x])
@@ -90,10 +89,31 @@ for number in a: #цифры/строки
                                                         time = [el for el, _ in groupby(time)]
                                                         time = sum(time, [])
 
-                                                        print('TIME:', time, 'Пара начинается в', time[0], 'Домой в', time[-1])
+                                                        #print('TIME:', time, 'Пара начинается в', time[0], 'Домой в', time[-1])
 
                                                         result = [w for w in weekly_schedule if w not in name]
+                                                        
+                                                        time_current = []
+                                                        for i, (start, end) in enumerate(zip(time[::2], time[1::2]), 1):
+                                                            time_current.append(f"{start} - {end}")
+                                                             #   if re.search(patterTIME, s) is not None:
+                                                       
+                                                        print(time_current)
+                                                        pTIME = r'[0-9][0-9]\:[0-9][0-9]'
+                                                        
+                                                        item_i_result = 0
+                                                        count = 0
+                                                        for item_i in range(len(result)):
+                                                            if re.search(pTIME, result[item_i]) is not None:
+                                                                count += 1
+                                                                #print('COUNT:', count, ' item_i:', item_i)
+                                                                result[item_i] += '  (' + time_current[count-1] + ')'
+                                                        
                                                         print('\nРЕЗУЛЬТАТ:', result)
+                                                        
+                                                        
+                                                        
+                                                        
 
 
                                                   
