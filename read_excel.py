@@ -69,18 +69,22 @@ for number in a: #цифры/строки
                                                                 
                                                                 #ФАМИЛИИ | NAME
                                                                 s = sheet[key + str(obj)].value # найденные ячейки с парами
-                                                                weekly_schedule.append(s) # заполянем список парами
                                                                 patter = r'[А-ЯЁа-яё]+\s[А-ЯЁа-яё]{1}\.\s*[А-ЯЁа-яё]{1}\.\s*\/*\s*[А-ЯЁа-яё]*\s*[А-ЯЁа-яё]*\.*\s*[А-ЯЁа-яё]*\.*' # ищем фамилии
                                                                 name.append(re.findall(patter, s)) # заносим найденные фамилии в ячейках s в список name
 
                                                                 #ВРЕМЯ | TIME
-                                                                patterTIME = r'[0-9][0-9]\:[0-9][0-9]'
+                                                                patterTIME = r'[0-9][0-9]\:[0-9][0-9][ \t]*\-*\—*[ \t]*[0-9][0-9]\:[0-9][0-9]\,*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*'
                                                                 time.append(re.findall(patterTIME, s))
+                                                                
+                                                                #ЗАПОЛНЯЕМ СПИСОК РАСПИСАНИЕМ | weekly_schedule
+                                                                weekly_schedule.append(s) # заполянем список парами
                                                         
                                                         #ФОРМАТИРУМ МАТРИЦУ С ФАМИЛИЯМИ
                                                         name = ([x for x in name if x])
                                                         name = [el for el, _ in groupby(name)]
                                                         name = sum(name, [])
+
+                                                        name = [line.rstrip() for line in name] #удаляем символы \n из строки времени
 
                                                         print('NAME:', name)
 
@@ -89,27 +93,36 @@ for number in a: #цифры/строки
                                                         time = [el for el, _ in groupby(time)]
                                                         time = sum(time, [])
 
-                                                        #print('TIME:', time, 'Пара начинается в', time[0], 'Домой в', time[-1])
+                                                        time = [line.rstrip() for line in time] #удаляем символы \n из строки времени
 
+                                                        print('TIME:', time, 'Пара начинается в', time[0][:5], 'Домой в', time[-1][-5:])
+                                                        
                                                         result = [w for w in weekly_schedule if w not in name]
                                                         
+                                                        """
                                                         time_current = []
                                                         for i, (start, end) in enumerate(zip(time[::2], time[1::2]), 1):
                                                             time_current.append(f"{start} - {end}")
                                                              #   if re.search(patterTIME, s) is not None:
                                                        
                                                         print(time_current)
+                                                        """
+                                                        
                                                         pTIME = r'[0-9][0-9]\:[0-9][0-9]'
                                                         
-                                                        item_i_result = 0
                                                         count = 0
                                                         for item_i in range(len(result)):
                                                             if re.search(pTIME, result[item_i]) is not None:
-                                                                count += 1
+                                                                patterTIME_del = r'[0-9][0-9]\:[0-9][0-9][ \t]*\-*\—*[ \t]*[0-9][0-9]\:[0-9][0-9]\,*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*'
+                                                                result[item_i] = re.sub(patterTIME_del, '', result[item_i]) # удаляем лишнее время из списка (то, что без скобок)
+                                                                
                                                                 #print('COUNT:', count, ' item_i:', item_i)
-                                                                result[item_i] += '  (' + time_current[count-1] + ')'
+                                                                result[item_i] += '  (' + time[count] + ')' #добавляем скобки
+                                                                count += 1
                                                         
+                                                        result = [line.rstrip() for line in result] #удаляем символы \n из строки результата
                                                         print('\nРЕЗУЛЬТАТ:', result)
+                                                        
                                                         
                                                         
                                                         
