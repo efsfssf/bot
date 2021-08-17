@@ -39,7 +39,7 @@ for event in longpoll.listen():
             if msg == 'привет':
                 sender(id, 'Приветствую!')
             elif msg == 'расписание':
-                ps.parse('Расписание')
+                sender(id, ''.join(ps.parse('Расписание')))
             elif msg == '/debug':
                 sender(id, f'Отладочная информация: {db.get_chats(id)}')
             elif msg == '/start':

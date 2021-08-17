@@ -1,5 +1,6 @@
 import requests, re
 from bs4 import BeautifulSoup
+import read_excel
 
 class parser:
     
@@ -37,9 +38,35 @@ class parser:
         
         return schedule
     
-    def file_search(self, schedule, text):
-        matrix =  ([['title'], ['link']])
+    def save_from_www(self, content, text):
+        for i in range(len(content)):
+            if text in content[i][0]:
+                filename = content[i][0]
+                r = requests.get(content[i][1], allow_redirects=True)
+                if r.status_code == 200:
+                    open(filename + '.' + content[i][1].split('.')[-1], 'wb').write(r.content)
+                else:
+                    print('Error. Ссылка на скачивание не доступна')
+            print()
         
+
+    def file_search(self, schedule, text):
+        matrix = [[d['title'], d['link']] for d in schedule]
+        #print(*map(' '.join, matrix), sep='\n')
+        for i in range(len(matrix)):
+            if text in matrix[i][0]:
+                print(matrix[i][0])
+            print()
+        self.save_from_www(matrix, text)
+        
+        
+        if type(read_excel.read_file(text)) == type(None):
+            print('Группа не найдена:', read_excel.read_file(text))
+            return ('Группа не найдена')
+        else:
+            return (read_excel.read_file(text))
+        
+        """
         for item in schedule:
             for j in range(len(matrix)):
                 matrix[j][0] = [item['title']]
@@ -49,10 +76,11 @@ class parser:
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
                 print(matrix[i][j], end = ' ')
+            print()
 
         #for item in schedule:
         print('Найдено файлов на сайте:', len(schedule))
-        
+        """
 
     def parse(self, text):
         
@@ -62,13 +90,14 @@ class parser:
             html = self.get_html(self.URL, params=None)
             done_sc = self.get_content(html.text)
             
-            self.file_search(done_sc, text)
+            return (self.file_search(done_sc, text))
         
         else:
-            print('Error')
+            print('Error. Сайт не доступен')
+            return 'Error. Сайт не доступен'
         return (self.text)
     
 
 
-ps = parser('Расписание')
-ps.parse('Расписание')
+#ps = parser('Расписание')
+#ps.parse('Расписание')
