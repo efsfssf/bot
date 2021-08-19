@@ -3,8 +3,7 @@ from dateutil import parser
 from itertools import groupby
 import os, locale, re
 
-def read_weekday(filename_test):
-    filename = 'Замена_на_20_августа_2021_г..docx'
+def read_weekday(filename):
     wordDoc = Document(os.getcwd() + f"\\{filename}")
     #заменяем название в файле:
     if filename.find('января') != -1:
@@ -45,8 +44,7 @@ def read_weekday(filename_test):
     print('Есть замены на: ', liva_weekday)
     return liva_weekday
 
-def read_file(filename_test):
-    filename = 'Замена_на_20_августа_2021_г..docx'
+def read_file(group, filename):
     wordDoc = Document(os.getcwd() + f"\\{filename}")
     #заменяем название в файле:
     if filename.find('января') != -1:
@@ -92,7 +90,7 @@ def read_file(filename_test):
     result = []
     for table in wordDoc.tables:
         for row in table.rows:
-            if '3исп-9'.upper() in row.cells[0].text:
+            if group.upper() in row.cells[0].text:
                 s = row.cells[2].text
                 s2 = row.cells[4].text
 

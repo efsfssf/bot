@@ -33,25 +33,24 @@ for event in longpoll.listen():
                 dey = ''
                 invite_id = -100
             
+            #чистим инфу от лишних симоволов (string.punctuation) (!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~)
+            droup_for_db = " ".join(str(x) for x in db.get_group(id))
+            for p in string.punctuation:
+                if p in droup_for_db:
+                    # банальная замена символа в строке
+                    droup_for_db = droup_for_db.replace(p, '')
+
             if dey == 'chat_invite_user':
                 sender(id, f'Приветствую тебя, @id{invite_id}!')
             
             if msg == 'привет':
                 sender(id, 'Приветствую!')
             elif msg == 'расписание':
-                sender(id, ''.join(ps.parse('Расписание')))
+                sender(id, ''.join(ps.parse(droup_for_db, 'Расписание')))
             elif msg == 'замена':
-                sender(id, ''.join(ps.parse('Замена')))
+                sender(id, ''.join(ps.parse(droup_for_db, 'Замена')))
             elif msg == '/debug':
-                
-                #чистим инфу от лишних симоволов (string.punctuation) (!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~)
-                droup_for_db = " ".join(str(x) for x in db.get_group(id))
-                for p in string.punctuation:
-                    if p in droup_for_db:
-                        # банальная замена символа в строке
-                        droup_for_db = droup_for_db.replace(p, '')
-
-                sender(id, f'Отладочная информация: \n Основная: {db.get_chats(id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code}')
+                sender(id, f'Отладочная информация: \n Основная: {db.get_chats(id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code} \nВерсия бота: alpha 0.3')
             elif msg == '/start':
                 sender(id, 'Введите вашу группу в формате ЧXXX-Ч: ')
                 for event in longpoll.listen():

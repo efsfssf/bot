@@ -52,7 +52,7 @@ def read_weekday(last_time):
   
 
 
-def main_open(file_name, function):
+def main_open(group, file_name, function):
     if not os.path.exists(f"{file_name}.xlsx"):   #если этого файла нет, создаем новый
         fname = (os.getcwd() + f"\\{file_name}.xls").replace('\\', '\\') #ищем файл со старым расширением
         excel = win32.gencache.EnsureDispatch('Excel.Application')
@@ -68,11 +68,11 @@ def main_open(file_name, function):
 
     sheet = wb.active
 
-    last_time = find_last_time(sheet)
-    print('[Test]Файл', file_name)
+    last_time = find_last_time(group, sheet)
+    print('[Test]Файл', file_name, ' группа:', group)
     if type(last_time) != type(None):
         if function == 'Расписание':
-            return read_file(sheet, last_time)
+            return read_file(group, sheet, last_time)
         elif function == 'Узнать на какой день недели парсить замены':
             otvet = read_weekday(last_time)
             return otvet
@@ -84,7 +84,7 @@ def main_open(file_name, function):
 
 
 
-def read_file(sheet, last_time):
+def read_file(group, sheet, last_time):
     
     
     to_day_or_not_today = ''
@@ -118,7 +118,7 @@ def read_file(sheet, last_time):
     for number in a: #цифры/строки
         for key in a_dict: #буквы/столбцы
             if type(sheet[key + str(number)].value) != type(None): #если ячейка не пустая
-                if '3исп-9'.upper() in sheet[key + str(number)].value: #ищем группу в расписании
+                if group.upper() in sheet[key + str(number)].value: #ищем группу в расписании
                     
                     #пробегаем в цикле по ячейки для поиска дня недели
                     for day in weekday_list: # пробигаемся по дням неделям
@@ -220,12 +220,12 @@ def read_file(sheet, last_time):
     #print(weekly_schedule) # выводим результат
 
 
-def find_last_time(sheet):
+def find_last_time(group, sheet):
     liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
     for number in a: #цифры/строки
         for key in a_dict: #буквы/столбцы
             if type(sheet[key + str(number)].value) != type(None): #если ячейка не пустая
-                if '3исп-9'.upper() in sheet[key + str(number)].value: #ищем группу в расписании
+                if group.upper() in sheet[key + str(number)].value: #ищем группу в расписании
                     #пробегаем в цикле по ячейки для поиска дня недели
                     for day in weekday_list: # пробигаемся по дням неделям
                         if day == liva_weekday: # если мы нашли день недели равным текущему

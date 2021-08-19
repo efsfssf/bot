@@ -41,19 +41,19 @@ class parser:
     def save_from_www(self, content, text):
         file_name_list = []
         for i in range(len(content)):
-            if text in content[i][0]:
-                filename = content[i][0]
-                file_name_list.append(filename)
-                r = requests.get(content[i][1], allow_redirects=True)
-                if r.status_code == 200:
-                    open(filename + '.' + content[i][1].split('.')[-1], 'wb').write(r.content)
-                else:
-                    print('Error. Ссылка на скачивание не доступна')
+            #if text in content[i][0]:
+            filename = content[i][0]
+            file_name_list.append(filename)
+            r = requests.get(content[i][1], allow_redirects=True)
+            if r.status_code == 200:
+                open(filename + '.' + content[i][1].split('.')[-1], 'wb').write(r.content)
+            else:
+                print('Error. Ссылка на скачивание не доступна')
             print()
-        print('Список файлов:', file_name_list)
+        #print('Список файлов:', file_name_list)
         
 
-    def file_search(self, schedule, text):
+    def file_search(self, group, schedule, text):
         matrix = [[d['title'], d['link']] for d in schedule]
         #print(*map(' '.join, matrix), sep='\n')
         for i in range(len(matrix)):
@@ -62,28 +62,32 @@ class parser:
             print()
         self.save_from_www(matrix, text)
         
-        test_file_name_list = ['Расписание_1_2_курсов_с_01_04_по_05_07_2021_1_поток', 'Расписание_1-4_курсов_с_01.04_по_05.07.2021_(2_поток)']
-        
+        test_file_name_list = ['Замена_на_20_августа_2021_г..docx', 'Расписание_1_2_курсов_с_01_04_по_05_07_2021_1_поток', 'Расписание_1-4_курсов_с_01.04_по_05.07.2021_(2_поток)']
+
 
         for j in test_file_name_list:
-            if text == 'Расписание':
-                schedule = read_excel.main_open(j,'Расписание')
+            if text == 'Расписание' and text in j:
+                print('Открытие файла:', j)
+                schedule = read_excel.main_open(group, j,'Расписание')
                 if type(schedule) == type(None):
                     print('Группа не найдена:', schedule)
                     
                 else:
                     return (schedule)
                     break
-            elif text == 'Замена':
-                schedule = read_excel.main_open(j,'Расписание')
-                if type(schedule) == type(None):
-                    print('Группа не найдена:', schedule)
-                    
-                else:
-                    if read_word.read_weekday(j) == read_excel.main_open(j,'Узнать на какой день недели парсить замены'):
-                        print('Первая функция ответила:', read_word.read_weekday(j), 'Вторая функция ответила:', read_excel.main_open(j,'Узнать на какой день недели парсить замены'))
-                        return read_word.read_file(j)
-                        break
+            elif text == 'Замена' and text in j:
+                for i in test_file_name_list:
+                    if 'Расписание' in i:
+                        print('Открытие файла:', i)
+                        schedule = read_excel.main_open(group, i,'Узнать на какой день недели парсить замены')
+                        if type(schedule) == type(None):
+                            print('Группа не найдена:', schedule)
+                        else:
+                            print(i)
+                            if read_word.read_weekday(group, j) == read_excel.main_open(group, i,'Узнать на какой день недели парсить замены'):
+                                return read_word.read_file(group, j)
+                                break
+                            
                 
             
         if text == 'Расписание':
@@ -108,7 +112,7 @@ class parser:
         print('Найдено файлов на сайте:', len(schedule))
         """
 
-    def parse(self, text):
+    def parse(self, group, text):
 
         html = self.get_html(self.URL)
         if html.status_code == 200:
@@ -116,7 +120,7 @@ class parser:
             html = self.get_html(self.URL, params=None)
             done_sc = self.get_content(html.text)
             
-            return (self.file_search(done_sc, text))
+            return (self.file_search(group, done_sc, text))
         
         else:
             print('Error. Сайт не доступен')
