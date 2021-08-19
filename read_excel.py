@@ -5,9 +5,31 @@ import itertools
 from itertools import groupby
 from collections import Counter
 
-def read_file(name):
-    if not os.path.exists('Расписание_1-4_курсов_с_01.04_по_05.07.2021_(2_поток).xlsx'):   #если этого файла нет, создаем новый
-        fname = (os.getcwd() + "\\Расписание_1-4_курсов_с_01.04_по_05.07.2021_(2_поток).xls").replace('\\', '\\') #ищем файл со старым расширением
+
+
+
+
+weekday_list = {"Понедельник":1,"Вторник":2,"Среда":3,"Четверг":4,"Пятница":5,"Суббота":6,"Воскресенье":7}
+weekday_list1 = {value:key for key, value in weekday_list.items()}
+
+#a_dict = {"A":1, "B":2, "C":3, "D":4, "E":5, "F":6, "G":7, "H":8, "I":9, "J":10, "K":11, "L":12, "M":13, "N":14, "O":15, "P":16, "Q":17, "R":18, "S":19, "T":20, "U":21, "V":22, "W":23, "X":24, "Y":25}
+a_dict = list(map(chr, range(97,123))) #для поиска группы по столбцам
+a = range(4, 7) #для поиска группы по строкам
+weekday_range = range(4, 100) #для поиска дня недели
+length_list = (3, 5) # сколько может быть пар в один день  с учетом пустых ячеек
+
+
+
+
+#liva_weekday = input('Введите день недели:')
+
+
+
+
+
+def main_open(file_name):
+    if not os.path.exists(f"{file_name}.xlsx"):   #если этого файла нет, создаем новый
+        fname = (os.getcwd() + f"\\{file_name}.xls").replace('\\', '\\') #ищем файл со старым расширением
         excel = win32.gencache.EnsureDispatch('Excel.Application')
         wb = excel.Workbooks.Open(fname)
         wb.SaveAs(fname+"x", FileFormat = 51)    #FileFormat = 51 is for .xlsx extension              сохраняем в новом формате
@@ -16,30 +38,47 @@ def read_file(name):
 
 
     # чекаем файл
-    wb = openpyxl.reader.excel.load_workbook(filename="Расписание_1-4_курсов_с_01.04_по_05.07.2021_(2_поток).xlsx")
+    wb = openpyxl.reader.excel.load_workbook(filename=f"{file_name}.xlsx")
     wb.active = 0
 
     sheet = wb.active
 
+    last_time = find_last_time(sheet)
+    
+    if type(last_time) != type(None):
+        return read_file(sheet, last_time)
+    else:
+        return None
 
 
 
-    weekday_list = {"Понедельник":1,"Вторник":2,"Среда":3,"Четверг":4,"Пятница":5,"Суббота":6,"Воскресенье":7}
-    weekday_list1 = {value:key for key, value in weekday_list.items()}
 
-    #a_dict = {"A":1, "B":2, "C":3, "D":4, "E":5, "F":6, "G":7, "H":8, "I":9, "J":10, "K":11, "L":12, "M":13, "N":14, "O":15, "P":16, "Q":17, "R":18, "S":19, "T":20, "U":21, "V":22, "W":23, "X":24, "Y":25}
-    a_dict = list(map(chr, range(97,123))) #для поиска группы по столбцам
-    a = range(4, 7) #для поиска группы по строкам
-    weekday_range = range(4, 100) #для поиска дня недели
-    length_list = (3, 5) # сколько может быть пар в один день  с учетом пустых ячеек
 
+
+def read_file(sheet, last_time):
+    
+    
+    to_day_or_not_today = ''
+    
+    #текущее время
+    now = datetime.datetime.now()
+    now = now.strftime("%H:%M")
+
+    print('Текущее время:', now, 'Время окончания пары:', last_time)
     # получаем день недели
-    liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
-    print('Будет показано расписание на: ', liva_weekday)
-    #liva_weekday = input('Введите день недели:')
+    if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
+        to_day_or_not_today = ' завтра'
+        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()+1)
+    else:
+        to_day_or_not_today = ' сегодня'
+        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+
+
     if liva_weekday == 'Воскресенье':
         liva_weekday = 'Понедельник'
-        
+
+    print('Будет показано расписание на: ', liva_weekday)
+
     weekly_schedule = []
     for number in a: #цифры/строки
         for key in a_dict: #буквы/столбцы
@@ -118,7 +157,7 @@ def read_file(name):
                                                                     patterTIME_del = r'[0-9][0-9]\:[0-9][0-9][ \t]*\-*\—*[ \t]*[0-9][0-9]\:[0-9][0-9]\,*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*'
                                                                     result[item_i] = re.sub(patterTIME_del, '', result[item_i]) # удаляем лишнее время из списка (то, что без скобок)
                                                                     
-                                                                    result[item_i] = eval('"' + result[item_i].replace('\n','') + '"')
+                                                                    result[item_i] = eval('"' + result[item_i].replace('\n','') + '"') #удалять лишнии переносы
 
                                                                     #print('COUNT:', count, ' item_i:', item_i)
                                                                     result[item_i] += '  (' + time[count] + ')' #добавляем скобки
@@ -126,7 +165,11 @@ def read_file(name):
                                                             
                                                             result = [line.rstrip() for line in result] #удаляем символы \n из строки результата
                                                             
-                                                            result = [f'\n {j}' for j in result]
+                                                            result = [f'\n {j}' for j in result] # добавляем переносы перед каждым пунктом
+
+                                                            result = [f'\n\n&#128341;{to_day_or_not_today.title()} в ' + time[0][:5]] + result
+                                                            result = ['Расписание на ' + to_day_or_not_today] + result
+                                                            
 
                                                             print('\nРЕЗУЛЬТАТ:', result)
 
@@ -140,5 +183,50 @@ def read_file(name):
 
                                                     
     #print(weekly_schedule) # выводим результат
+
+
+def find_last_time(sheet):
+    liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+    for number in a: #цифры/строки
+        for key in a_dict: #буквы/столбцы
+            if type(sheet[key + str(number)].value) != type(None): #если ячейка не пустая
+                if '3исп-9'.upper() in sheet[key + str(number)].value: #ищем группу в расписании
+                    #пробегаем в цикле по ячейки для поиска дня недели
+                    for day in weekday_list: # пробигаемся по дням неделям
+                        if day == liva_weekday: # если мы нашли день недели равным текущему
+                            for number_day in weekday_range: # пробигаемся по определенном диапозоне для поиска ...
+                                if type(sheet[key + str(number_day)].value) != type(None): #если ячейка не пустая
+                                    if day in sheet[key + str(number_day)].value: #Нашли день недели
+                                        next_day = weekday_list.get(day)+1 # поменчаем, что неделя следующая (если сейчас 5, то парсим до 6)
+                                        lest_day_text = weekday_list1.get(next_day)# ищем номер недели в списке (чтобы писалась неделя текстом, а не цифрой)
+                                        
+                                        next_weekday_range = range(number_day, 100) # Диапозон от сегодняшнего дня недели до не найденного следующего (будем искать от сегодняшней до 100 ячейки)
+                                        
+                                        for day_next in weekday_list:
+                                            if day_next == lest_day_text:
+                                                for number_day_next in next_weekday_range: #пробегаем в цикле по ячейки для поиска след дня недели
+                                                    if type(sheet[key + str(number_day_next)].value) != type(None): #если ячейка не пустая
+                                                        if day_next in sheet[key + str(number_day_next)].value: #Нашли завтрашний день недели
+                                                            list_object = range(number_day+1, number_day_next) #от сегодняшнего дня недели до завтрашнего
+                                                            time = []
+                                                            for obj in list_object:
+                                                                if type(sheet[key + str(obj)].value) != type(None):
+                                                                    s = sheet[key + str(obj)].value # найденные ячейки с парами
+                                                                    #ВРЕМЯ | TIME
+                                                                    patterTIME = r'[0-9][0-9]\:[0-9][0-9][ \t]*\-*\—*[ \t]*[0-9][0-9]\:[0-9][0-9]\,*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*[ \t]*\-*\—*[ \t]*[0-9]*[0-9]*\:*[0-9]*[0-9]*'
+                                                                    time.append(re.findall(patterTIME, s))
+                                                                    
+                                                            
+                                                            
+                                                            #ФОРМАТИРУМ МАТРИЦУ С ВРЕМЕНЕМ
+                                                            time = ([x for x in time if x])
+                                                            time = [el for el, _ in groupby(time)]
+                                                            time = sum(time, [])
+
+                                                            time = [line.rstrip() for line in time] #удаляем символы \n из строки времени
+
+                                                            print('\nКонец в', time[-1][-5:])
+                                                            
+                                                            return (time[-1][-5:])
 
 

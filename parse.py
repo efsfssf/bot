@@ -39,15 +39,18 @@ class parser:
         return schedule
     
     def save_from_www(self, content, text):
+        file_name_list = []
         for i in range(len(content)):
             if text in content[i][0]:
                 filename = content[i][0]
+                file_name_list.append(filename)
                 r = requests.get(content[i][1], allow_redirects=True)
                 if r.status_code == 200:
                     open(filename + '.' + content[i][1].split('.')[-1], 'wb').write(r.content)
                 else:
                     print('Error. Ссылка на скачивание не доступна')
             print()
+        print('Список файлов:', file_name_list)
         
 
     def file_search(self, schedule, text):
@@ -59,13 +62,22 @@ class parser:
             print()
         self.save_from_www(matrix, text)
         
+        test_file_name_list = ['Расписание_1_2_курсов_с_01_04_по_05_07_2021_1_поток', 'Расписание_1-4_курсов_с_01.04_по_05.07.2021_(2_поток)']
         
-        if type(read_excel.read_file(text)) == type(None):
-            print('Группа не найдена:', read_excel.read_file(text))
-            return ('Группа не найдена')
-        else:
-            return (read_excel.read_file(text))
+
+        for j in test_file_name_list:
+            if text == 'Расписание':
+                schedule = read_excel.main_open(j)
+                if type(schedule) == type(None):
+                    print('Группа не найдена:', schedule)
+                    
+                else:
+                    return (schedule)
+                    break
+            elif text == 'Замена':
+                return 'Данная функция в разработке. Ждите!'
         
+        return ('Агент не смог найти вашу группу в расписании. Обратитесь к моему начальству: vk.me/agent_nomer11')
         """
         for item in schedule:
             for j in range(len(matrix)):
@@ -84,6 +96,9 @@ class parser:
 
     def parse(self, text):
         
+        if text == 'Замена':
+            print('Сек')
+
         html = self.get_html(self.URL)
         if html.status_code == 200:
             schedule = self.get_content(html.text)

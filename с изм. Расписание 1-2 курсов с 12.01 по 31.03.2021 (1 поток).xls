@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
-<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app103.us.archive.org';v.server_ms=344;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=xTFGO54E" charset="utf-8"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app202.us.archive.org';v.server_ms=172;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=xTFGO54E" charset="utf-8"></script>
 <script type="text/javascript" src="/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
 <script type="text/javascript">
   __wm.init("https://web.archive.org/web");
@@ -16,7 +16,7 @@
 <script type="text/javascript"> var _iframeUrl = ''; var _windowTitle = ''; var _favIconUrl = ''; var _shouldDoRedirect = true; var _failureRedirectUrl = 'filenotfound.htm?llcc=en-US&hid=0983a067-c4b2-45d3-aa47-4004df5ee8fe'; var _accessToken = ''; function OnLoad() { if (_shouldDoRedirect) { window.location = _failureRedirectUrl; return; } document.title = _windowTitle; var link = document.createElement("link"); link.type = "image/vnd.microsoft.icon"; link.rel = "shortcut icon"; link.href = _favIconUrl; document.getElementsByTagName('head')[0].appendChild(link); var img = document.getElementById('load_img'); if (img) img.style.display = 'none'; var iframe = document.createElement('iframe'); iframe.src = ''; iframe.frameBorder = 0; iframe.id = 'wacframe'; iframe.name = 'wacframe'; iframe.setAttribute('allowfullscreen', 'true'); document.body.appendChild(iframe); var form2 = document.createElement('form'); form2.action = _iframeUrl; form2.method = 'post'; form2.target = 'wacframe'; form2.id = 'form2'; var input = document.createElement('input'); input.type = 'hidden'; input.name = 'access_token'; input.value = _accessToken; form2.appendChild(input); document.body.appendChild(form2); form2.submit(); } </script></form></body></html> 
 <!--
      FILE ARCHIVED ON 14:58:02 Aug 17, 2021 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 19:59:14 Aug 17, 2021.
+     INTERNET ARCHIVE ON 19:10:44 Aug 18, 2021.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
@@ -24,13 +24,13 @@
 -->
 <!--
 playback timings (ms):
-  RedisCDXSource: 7.351
-  esindex: 0.017
-  captures_list: 108.843
-  exclusion.robots: 0.244
-  exclusion.robots.policy: 0.23
-  PetaboxLoader3.datanode: 270.175 (4)
-  load_resource: 225.743
-  CDXLines.iter: 31.883 (3)
-  LoadShardBlock: 65.12 (3)
+  captures_list: 121.167
+  exclusion.robots: 0.113
+  exclusion.robots.policy: 0.104
+  RedisCDXSource: 1.695
+  esindex: 0.009
+  LoadShardBlock: 81.014 (3)
+  PetaboxLoader3.datanode: 49.9 (4)
+  CDXLines.iter: 33.786 (3)
+  load_resource: 45.117
 -->

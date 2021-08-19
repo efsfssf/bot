@@ -19,6 +19,11 @@ class SQLighter:
         with self.connection:
             return self.cursor.execute("SELECT * FROM `group_student` WHERE `id_chat` = ?", (id_chat,)).fetchall()
 
+    def get_group(self, id_chat):
+        """Получаем все группы студентов"""
+        with self.connection:
+            return self.cursor.execute("SELECT gr FROM `group_student` WHERE `id_chat` = ?", (id_chat,)).fetchall()
+
     def chat_exists(self, id_chat):
         """Проверяем, есть ли уже беседа в базе"""
         with self.connection:
