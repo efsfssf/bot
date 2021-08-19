@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
-<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app102.us.archive.org';v.server_ms=409;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=xTFGO54E" charset="utf-8"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app57.us.archive.org';v.server_ms=503;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=xTFGO54E" charset="utf-8"></script>
 <script type="text/javascript" src="/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
 <script type="text/javascript">
   __wm.init("https://web.archive.org/web");
@@ -11,7 +11,7 @@
 <!-- End Wayback Rewrite JS Include -->
 <title></title><link rel="stylesheet" type="text/css" href="//web.archive.org/web/20210818181946cs_/https://www.gstatic.com/_/apps-viewer/_/ss/k=apps-viewer.standalone.pQaVJxvxUSA.L.W.O/d=0/rs=AC2dHMIKntHa--q9BxPiLmQY5670iTw3UQ" nonce="4WLqnfrcsO9EdCxvDQUskw"/></head><body><script type="text/javascript" charset="UTF-8" src="//web.archive.org/web/20210818181946js_/https://www.gstatic.com/_/apps-viewer/_/js/k=apps-viewer.standalone.en_US.BQGaASinMWM.O/d=1/rs=AC2dHMJCuJ60_Hqlr4wYghr-F0E3bNezUQ/m=main" nonce="KDj2L8aLEWK8zY4mJroVvQ"></script><script type="text/javascript" src="https://web.archive.org/web/20210818181946js_/https://apis.google.com/js/client.js" nonce="KDj2L8aLEWK8zY4mJroVvQ"></script><script type="text/javascript" nonce="KDj2L8aLEWK8zY4mJroVvQ">_init([["0",null,null,null,null,1,null,null,null,null,0,[1],0,null,null,"https://web.archive.org/web/20210818181946/https://drive.google.com",null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,[["core-513-RC1","prod"],12,1,1],null,null,null,null,[null,null,null,null,"https://web.archive.org/web/20210818181946/https://accounts.google.com/ServiceLogin?passive\u003d1209600\u0026continue\u003dhttps://docs.google.com/viewer?url%3Dhttp://academicol.ru/upload/price/postoynnoe_spo/para/%25D0%2597%25D0%25B0%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B0_%25D0%25BD%25D0%25B0_03_%25D0%25BC%25D0%25B0%25D1%2580%25D1%2582%25D0%25B0_2021_%25D0%25B3..docx\u0026hl\u003den_US\u0026followup\u003dhttps://docs.google.com/viewer?url%3Dhttp://academicol.ru/upload/price/postoynnoe_spo/para/%25D0%2597%25D0%25B0%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B0_%25D0%25BD%25D0%25B0_03_%25D0%25BC%25D0%25B0%25D1%2580%25D1%2582%25D0%25B0_2021_%25D0%25B3..docx",null,null,null,0],null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,1,null,null,null,null,null,null,"/viewerng/standalone/refresh?url\u003dhttp://academicol.ru/upload/price/postoynnoe_spo/para/%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0_%D0%BD%D0%B0_03_%D0%BC%D0%B0%D1%80%D1%82%D0%B0_2021_%D0%B3..docx",[null,null,null,null,null,null,null,null,null,5]],"","",0]);</script></body></html><!--
      FILE ARCHIVED ON 18:19:46 Aug 18, 2021 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 19:11:15 Aug 18, 2021.
+     INTERNET ARCHIVE ON 18:49:51 Aug 19, 2021.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
@@ -19,13 +19,14 @@
 -->
 <!--
 playback timings (ms):
-  exclusion.robots: 0.205
-  RedisCDXSource: 9.71
-  exclusion.robots.policy: 0.189
-  load_resource: 17.48
-  captures_list: 379.938
-  LoadShardBlock: 336.018 (3)
-  PetaboxLoader3.datanode: 250.903 (3)
-  CDXLines.iter: 29.875 (3)
-  esindex: 0.015
+  captures_list: 377.601
+  exclusion.robots: 0.15
+  exclusion.robots.policy: 0.139
+  RedisCDXSource: 20.728
+  esindex: 0.019
+  LoadShardBlock: 325.71 (3)
+  PetaboxLoader3.resolve: 167.332 (3)
+  PetaboxLoader3.datanode: 114.21 (4)
+  CDXLines.iter: 27.07 (3)
+  load_resource: 120.587
 -->

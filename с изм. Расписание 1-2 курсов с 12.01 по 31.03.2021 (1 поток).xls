@@ -1,10 +1,10 @@
 <!DOCTYPE html><html><head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
-<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app202.us.archive.org';v.server_ms=172;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=xTFGO54E" charset="utf-8"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app12.us.archive.org';v.server_ms=666;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=xTFGO54E" charset="utf-8"></script>
 <script type="text/javascript" src="/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
 <script type="text/javascript">
   __wm.init("https://web.archive.org/web");
-  __wm.wombat("https://view.officeapps.live.com/op/view.aspx?src=http%3A%2F%2Facademicol.ru%2Fupload%2Fprice%2Fpostoynnoe_spo%2Fpara%2F%D1%81_%D0%B8%D0%B7%D0%BC._%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_1-2_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_12.01_%D0%BF%D0%BE_31.03.2021_%281_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%29.xls","20210817145802","https://web.archive.org/","web","/_static/",
-	      "1629212282");
+  __wm.wombat("https://view.officeapps.live.com/op/view.aspx?src=http%3A%2F%2Facademicol.ru%2Fupload%2Fprice%2Fpostoynnoe_spo%2Fpara%2F%D1%81_%D0%B8%D0%B7%D0%BC._%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_1-2_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_12.01_%D0%BF%D0%BE_31.03.2021_%281_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%29.xls","20210819180624","https://web.archive.org/","web","/_static/",
+	      "1629396384");
 </script>
 <link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=omkqRugM" />
 <link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=qtvMKcIJ" />
@@ -13,10 +13,10 @@
 <div class="aspNetHidden">
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value=""/>
 </div>
-<script type="text/javascript"> var _iframeUrl = ''; var _windowTitle = ''; var _favIconUrl = ''; var _shouldDoRedirect = true; var _failureRedirectUrl = 'filenotfound.htm?llcc=en-US&hid=0983a067-c4b2-45d3-aa47-4004df5ee8fe'; var _accessToken = ''; function OnLoad() { if (_shouldDoRedirect) { window.location = _failureRedirectUrl; return; } document.title = _windowTitle; var link = document.createElement("link"); link.type = "image/vnd.microsoft.icon"; link.rel = "shortcut icon"; link.href = _favIconUrl; document.getElementsByTagName('head')[0].appendChild(link); var img = document.getElementById('load_img'); if (img) img.style.display = 'none'; var iframe = document.createElement('iframe'); iframe.src = ''; iframe.frameBorder = 0; iframe.id = 'wacframe'; iframe.name = 'wacframe'; iframe.setAttribute('allowfullscreen', 'true'); document.body.appendChild(iframe); var form2 = document.createElement('form'); form2.action = _iframeUrl; form2.method = 'post'; form2.target = 'wacframe'; form2.id = 'form2'; var input = document.createElement('input'); input.type = 'hidden'; input.name = 'access_token'; input.value = _accessToken; form2.appendChild(input); document.body.appendChild(form2); form2.submit(); } </script></form></body></html> 
+<script type="text/javascript"> var _iframeUrl = ''; var _windowTitle = ''; var _favIconUrl = ''; var _shouldDoRedirect = true; var _failureRedirectUrl = 'filenotfound.htm?llcc=en-US&hid=0540e3db-fe43-482a-8645-2cb05d96ef5d'; var _accessToken = ''; function OnLoad() { if (_shouldDoRedirect) { window.location = _failureRedirectUrl; return; } document.title = _windowTitle; var link = document.createElement("link"); link.type = "image/vnd.microsoft.icon"; link.rel = "shortcut icon"; link.href = _favIconUrl; document.getElementsByTagName('head')[0].appendChild(link); var img = document.getElementById('load_img'); if (img) img.style.display = 'none'; var iframe = document.createElement('iframe'); iframe.src = ''; iframe.frameBorder = 0; iframe.id = 'wacframe'; iframe.name = 'wacframe'; iframe.setAttribute('allowfullscreen', 'true'); document.body.appendChild(iframe); var form2 = document.createElement('form'); form2.action = _iframeUrl; form2.method = 'post'; form2.target = 'wacframe'; form2.id = 'form2'; var input = document.createElement('input'); input.type = 'hidden'; input.name = 'access_token'; input.value = _accessToken; form2.appendChild(input); document.body.appendChild(form2); form2.submit(); } </script></form></body></html> 
 <!--
-     FILE ARCHIVED ON 14:58:02 Aug 17, 2021 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 19:10:44 Aug 18, 2021.
+     FILE ARCHIVED ON 18:06:24 Aug 19, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:54:51 Aug 19, 2021.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
@@ -24,13 +24,14 @@
 -->
 <!--
 playback timings (ms):
-  captures_list: 121.167
-  exclusion.robots: 0.113
-  exclusion.robots.policy: 0.104
-  RedisCDXSource: 1.695
-  esindex: 0.009
-  LoadShardBlock: 81.014 (3)
-  PetaboxLoader3.datanode: 49.9 (4)
-  CDXLines.iter: 33.786 (3)
-  load_resource: 45.117
+  esindex: 0.013
+  exclusion.robots.policy: 0.162
+  PetaboxLoader3.resolve: 33.201
+  CDXLines.iter: 31.831 (3)
+  exclusion.robots: 0.174
+  cdx.remote: 0.089
+  PetaboxLoader3.datanode: 67.707 (3)
+  captures_list: 649.275
+  LoadShardBlock: 603.987 (3)
+  load_resource: 10.562
 -->

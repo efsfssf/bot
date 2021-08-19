@@ -24,10 +24,35 @@ length_list = (3, 5) # сколько может быть пар в один д�
 #liva_weekday = input('Введите день недели:')
 
 
+def read_weekday(last_time):
+    to_day_or_not_today = ''
+    
+    #текущее время
+    now = datetime.datetime.now()
+    now = now.strftime("%H:%M")
+
+    print('Текущее время:', now, 'Время окончания пары:', last_time)
+    
+    
+
+    # получаем день недели
+    if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
+        to_day_or_not_today = ' завтра'
+        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()+1)
+        print('Пары закончились, идет сравнение с расписанием на следущий день')
+    else:
+        to_day_or_not_today = ' сегодня'
+        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
 
 
+    if liva_weekday == 'Воскресенье':
+        liva_weekday = 'Понедельник'
+    return liva_weekday
 
-def main_open(file_name):
+  
+
+
+def main_open(file_name, function):
     if not os.path.exists(f"{file_name}.xlsx"):   #если этого файла нет, создаем новый
         fname = (os.getcwd() + f"\\{file_name}.xls").replace('\\', '\\') #ищем файл со старым расширением
         excel = win32.gencache.EnsureDispatch('Excel.Application')
@@ -36,7 +61,7 @@ def main_open(file_name):
         wb.Close()                               #FileFormat = 56 is for .xls extension
         excel.Application.Quit()
 
-
+    
     # чекаем файл
     wb = openpyxl.reader.excel.load_workbook(filename=f"{file_name}.xlsx")
     wb.active = 0
@@ -44,9 +69,13 @@ def main_open(file_name):
     sheet = wb.active
 
     last_time = find_last_time(sheet)
-    
+    print('[Test]Файл', file_name)
     if type(last_time) != type(None):
-        return read_file(sheet, last_time)
+        if function == 'Расписание':
+            return read_file(sheet, last_time)
+        elif function == 'Узнать на какой день недели парсить замены':
+            otvet = read_weekday(last_time)
+            return otvet
     else:
         return None
 
@@ -65,6 +94,10 @@ def read_file(sheet, last_time):
     now = now.strftime("%H:%M")
 
     print('Текущее время:', now, 'Время окончания пары:', last_time)
+    
+    
+
+    """
     # получаем день недели
     if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
         to_day_or_not_today = ' завтра'
@@ -77,6 +110,8 @@ def read_file(sheet, last_time):
     if liva_weekday == 'Воскресенье':
         liva_weekday = 'Понедельник'
 
+    """
+    liva_weekday = 'Пятница'
     print('Будет показано расписание на: ', liva_weekday)
 
     weekly_schedule = []
@@ -125,7 +160,7 @@ def read_file(sheet, last_time):
                                                             name = [el for el, _ in groupby(name)]
                                                             name = sum(name, [])
 
-                                                            name = [line.rstrip() for line in name] #удаляем символы \n из строки времени
+                                                            name = [line.rstrip() for line in name] #удаляем символы \n из строки фамилий
 
                                                             print('NAME:', name)
 

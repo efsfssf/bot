@@ -1,6 +1,6 @@
 import requests, re
 from bs4 import BeautifulSoup
-import read_excel
+import read_excel, read_word
 
 class parser:
     
@@ -67,7 +67,7 @@ class parser:
 
         for j in test_file_name_list:
             if text == 'Расписание':
-                schedule = read_excel.main_open(j)
+                schedule = read_excel.main_open(j,'Расписание')
                 if type(schedule) == type(None):
                     print('Группа не найдена:', schedule)
                     
@@ -75,9 +75,23 @@ class parser:
                     return (schedule)
                     break
             elif text == 'Замена':
-                return 'Данная функция в разработке. Ждите!'
-        
-        return ('Агент не смог найти вашу группу в расписании. Обратитесь к моему начальству: vk.me/agent_nomer11')
+                schedule = read_excel.main_open(j,'Расписание')
+                if type(schedule) == type(None):
+                    print('Группа не найдена:', schedule)
+                    
+                else:
+                    if read_word.read_weekday(j) == read_excel.main_open(j,'Узнать на какой день недели парсить замены'):
+                        print('Первая функция ответила:', read_word.read_weekday(j), 'Вторая функция ответила:', read_excel.main_open(j,'Узнать на какой день недели парсить замены'))
+                        return read_word.read_file(j)
+                        break
+                
+            
+        if text == 'Расписание':
+            return ('Агент не смог найти вашу группу в расписании. Обратитесь к моему начальству: vk.me/agent_nomer11')
+        elif text == 'Замена':
+            return ('Замен нет')
+        else:
+            return ('Произошло что-то невероятное! Скорее напишите нам: vk.me/agent_nomer11')
         """
         for item in schedule:
             for j in range(len(matrix)):
@@ -95,9 +109,6 @@ class parser:
         """
 
     def parse(self, text):
-        
-        if text == 'Замена':
-            print('Сек')
 
         html = self.get_html(self.URL)
         if html.status_code == 200:
