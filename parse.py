@@ -84,7 +84,7 @@ class parser:
                             print('Группа не найдена:', schedule)
                         else:
                             print(i)
-                            if read_word.read_weekday(group, j) == read_excel.main_open(group, i,'Узнать на какой день недели парсить замены'):
+                            if read_word.read_weekday(j) == read_excel.main_open(group, i,'Узнать на какой день недели парсить замены'):
                                 return read_word.read_file(group, j)
                                 break
                             

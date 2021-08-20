@@ -1,4 +1,4 @@
-import vk_api, sqlite3, requests, io, string
+import vk_api, sqlite3, requests, io, re
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 from config import tok
 from SQLighter import SQLighter
@@ -33,13 +33,21 @@ for event in longpoll.listen():
                 dey = ''
                 invite_id = -100
             
-            #чистим инфу от лишних симоволов (string.punctuation) (!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~)
+            #чистим инфу от лишних симоволов
+            punctuation = '!"#$%&\'()*+,./:;<=>?@[\\]^_`{|}~'
             droup_for_db = " ".join(str(x) for x in db.get_group(id))
-            for p in string.punctuation:
+            for p in punctuation:
                 if p in droup_for_db:
                     # банальная замена символа в строке
                     droup_for_db = droup_for_db.replace(p, '')
 
+            patter = '[1-5][А-Яа-я][А-Яа-я][А-Яа-я]*\-[1-9]\-*[1-9]*'
+            group = ''
+            if type(re.match(patter, msg)) != type(None):
+                group = (re.match(patter, msg).group(0)).lower()
+            else:
+                group = ''
+            print(group)
             if dey == 'chat_invite_user':
                 sender(id, f'Приветствую тебя, @id{invite_id}!')
             
@@ -50,20 +58,19 @@ for event in longpoll.listen():
             elif msg == 'замена':
                 sender(id, ''.join(ps.parse(droup_for_db, 'Замена')))
             elif msg == '/debug':
-                sender(id, f'Отладочная информация: \n Основная: {db.get_chats(id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code} \nВерсия бота: alpha 0.3')
+                sender(id, f'Отладочная информация: \n Основная: {db.get_chats(id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code} \nВерсия бота: alpha 0.9')
             elif msg == '/start':
-                sender(id, 'Введите вашу группу в формате ЧXXX-Ч: ')
-                for event in longpoll.listen():
-                    if event.type == VkBotEventType.MESSAGE_NEW:
-                        if(not db.chat_exists(id)):
-                            # если беседы нет в базе, добавляем его
-                            msgGroup = event.object.message['text'].lower()
-                            db.add_chat(id, msgGroup)            
-                            sender(id, 'Ваша группа будет занесена в базу данных')
-                            break
-                        else:
-                            sender(id, 'Ваша группа уже добавлена в базу данных')
-                            break
-                
+                if not db.chat_exists(id):
+                    sender(id, 'Введите вашу группу в формате ЧXXX-Ч: ')
+                else:
+                    sender(id, 'Ваша группа уже добавлена в базу данных')
+            
+            elif msg == group:
+                # если беседы нет в базе, добавляем его
+                print('По маске:', re.match(patter, msg), ' без маски:', msg)
+                db.add_chat(id, group)            
+                sender(id, 'Ваша группа будет занесена в базу данных')
+                #sender(id, 'Ваша группа введена не верно, повторите ввод по шаблону NXXX-N или NXX-N или NXXX-N-N, где N любое числа, а X любая буква')
+            print('Сообщение: ', msg, ' Получили паттером: ', group)
 
             
