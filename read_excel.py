@@ -1,5 +1,6 @@
-import openpyxl, os, datetime, re
-import win32com.client as win32
+import openpyxl, os, datetime, re, xlrd
+#import win32com.client as win32
+from openpyxl.workbook import Workbook
 import numpy as np
 import itertools
 from itertools import groupby
@@ -23,6 +24,26 @@ length_list = (3, 5) # сколько может быть пар в один д�
 
 #liva_weekday = input('Введите день недели:')
 
+def open_xls_as_xlsx(filename):
+    # first open using xlrd
+    book = xlrd.open_workbook( filename =filename)
+    index = 0
+    nrows, ncols = 0, 0
+    while nrows * ncols == 0:
+        sheet = book.sheet_by_index(index)
+        nrows = sheet.nrows
+        ncols = sheet.ncols
+        index += 1
+
+    # prepare a xlsx sheet
+    book1 = Workbook()
+    sheet1 = book1.active
+
+    for row in range(0, nrows):
+        for col in range(0, ncols):
+            sheet1.cell(row=row+1, column=col+1).value = sheet.cell_value(row, col)
+
+    return book1
 
 def read_weekday(last_time):
     to_day_or_not_today = ''
@@ -54,12 +75,15 @@ def read_weekday(last_time):
 
 def main_open(group, file_name, function):
     if not os.path.exists(f"{file_name}.xlsx"):   #если этого файла нет, создаем новый
+        open_xls_as_xlsx(os.getcwd() + f'/{file_name}.xls').save(filename = f'{file_name}.xlsx')
+        """
         fname = (os.getcwd() + f"\\{file_name}.xls").replace('\\', '\\') #ищем файл со старым расширением
         excel = win32.gencache.EnsureDispatch('Excel.Application')
         wb = excel.Workbooks.Open(fname)
         wb.SaveAs(fname+"x", FileFormat = 51)    #FileFormat = 51 is for .xlsx extension              сохраняем в новом формате
         wb.Close()                               #FileFormat = 56 is for .xls extension
         excel.Application.Quit()
+        """
 
     
     # чекаем файл
