@@ -35,7 +35,7 @@ def read_weekday(filename):
     weekday_list1 = {value:key for key, value in weekday_list.items()}
 
     #получаем на какой день недели расписание
-    locale.setlocale(locale.LC_TIME, 'ru')
+    locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
     extr_date = re.search("(\d+.+?)_г", filename).group(1).replace("_"," ")
     week_day = parser.parse(extr_date).weekday()+1
 
@@ -44,7 +44,7 @@ def read_weekday(filename):
     print('Есть замены на: ', liva_weekday)
     return liva_weekday
 
-def read_file(group, filename):
+def read_file(group, filename, merge):
     wordDoc = Document(os.getcwd() + f"\\{filename}")
     #заменяем название в файле:
     if filename.find('января') != -1:
@@ -76,7 +76,7 @@ def read_file(group, filename):
     weekday_list1 = {value:key for key, value in weekday_list.items()}
 
     #получаем на какой день недели расписание
-    locale.setlocale(locale.LC_TIME, 'ru')
+    locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
     extr_date = re.search("(\d+.+?)_г", filename).group(1).replace("_"," ")
     week_day = parser.parse(extr_date).weekday()+1
 
@@ -85,6 +85,7 @@ def read_file(group, filename):
     print('Будет показаны замены на: ', liva_weekday)
 
     Substitutions = []
+    Substitutions2 = []
     name = []
     time = []
     result = []
@@ -112,6 +113,9 @@ def read_file(group, filename):
                 s = eval('"' + s.replace('\n','') + '"')
                 s2 = eval('"' + s2.replace('\n','') + '"')
 
+                
+                Substitutions2.append(row.cells[1].text + '. ' + s2 )
+
                 Substitutions.append('\n' + row.cells[1].text + '. ' + '&#0822;' + '&#0822;'.join(s)  + s2 )
         
 
@@ -126,19 +130,26 @@ def read_file(group, filename):
 
     print('NAME:', name)
 
-    #ФОРМАТИРУМ МАТРИЦУ С ВРЕМЕНЕМ
-    time = ([x for x in time if x])
-    time = [el for el, _ in groupby(time)]
-    time = sum(time, [])
+    if time:
+        #ФОРМАТИРУМ МАТРИЦУ С ВРЕМЕНЕМ
+        time = ([x for x in time if x])
+        time = [el for el, _ in groupby(time)]
+        time = sum(time, [])
 
-    time = [line.rstrip() for line in time] #удаляем символы \n из строки времени
+        time = [line.rstrip() for line in time] #удаляем символы \n из строки времени
 
-    print('TIME:', time, 'Пара начинается в', time[0], ' (изм.)\n\n')
+        print('TIME:', time, 'Пара начинается в', time[0], ' (изм.)\n\n')
 
-    time = ['В колледж ' + str(time[0]) + ' (изм.)']
-    result = time + Substitutions
+        time = ['В колледж ' + str(time[0]) + ' (изм.)']
+        result = time + Substitutions
+    else:
+        result = Substitutions
 
-    print(result)
-    return result
+    if not merge:
+        print('Замены:', result)
+        return result
+    elif merge:
+        print('Замены2:', Substitutions2)
+        return Substitutions2, time if time else 'Пусто'
 
 

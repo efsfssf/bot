@@ -1,6 +1,16 @@
-from parse import parser
+import re
 
-pars = parser('Замена')
+one = ['Расписание на ', '\n\n&#128341; в 15:10', '\n 4. Н/Б', '\n 5. РАЗРАБОТКА ПРОГРАММНЫХ РЕШЕНИЙ НА ПЛАТФОРМЕ 1С  (15:10 - 16:40)', '\n 6. РАЗРАБОТКА ПРОГРАММНЫХ РЕШЕНИЙ НА ПЛАТФОРМЕ 1С  (16:50 - 18:20)', '\n 7. УЧЕБНАЯ ПРАКТИКА ПО ПМ.11  (18:30 - 20:00)']
+two = ['Второй список', '\n3. Яблоко ', '\n4. Банан ', '\n5. Груша']
 
-def run_seartch():
-    pars.parse('Замена')
+o = []
+
+for i in one:
+    patter = r'[0-9]\.'
+    if not re.findall(patter, i):
+        continue
+    else:
+        print('Потому, что:',re.findall(patter, i) )
+        o.append(i)
+
+print(o)

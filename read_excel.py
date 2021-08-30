@@ -46,35 +46,43 @@ def open_xls_as_xlsx(filename):
     return book1
 
 def read_weekday(last_time):
+    
     to_day_or_not_today = ''
     
     #текущее время
-    now = datetime.datetime.now()
+    offset = datetime.timezone(datetime.timedelta(hours=3))
+    now = datetime.datetime.now(offset)
     now = now.strftime("%H:%M")
 
     print('Текущее время:', now, 'Время окончания пары:', last_time)
     
     
 
-    # получаем день недели
-    if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
-        to_day_or_not_today = ' завтра'
-        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()+1)
-        print('Пары закончились, идет сравнение с расписанием на следущий день')
+    if weekday_list1.get(datetime.datetime.today().isoweekday()) != 'Воскресенье':
+        # получаем день недели
+        if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
+            to_day_or_not_today = ' завтра'
+            liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()+1)
+            print('Пары закончились, идет сравнение с расписанием на следущий день')
+        else:
+            to_day_or_not_today = ' сегодня'
+            liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+
+
+        if liva_weekday == 'Воскресенье':
+            liva_weekday = 'Понедельник'
     else:
-        to_day_or_not_today = ' сегодня'
-        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
-
-
-    if liva_weekday == 'Воскресенье':
-        liva_weekday = 'Понедельник'
+        to_day_or_not_today = ' завтра'
+        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()-6)
+    
+    liva_weekday = 'Пятница'
     return liva_weekday
 
   
 
 
-def main_open(group, file_name, function):
-    if not os.path.exists(f"{file_name}.xlsx"):   #если этого файла нет, создаем новый
+def main_open(group, file_name, function, merge):
+    if not os.path.exists(f"{file_name}.xlsx") and os.path.exists(f"{file_name}.xls"):   #если этого файла нет, создаем новый
         open_xls_as_xlsx(os.getcwd() + f'/{file_name}.xls').save(filename = f'{file_name}.xlsx')
         """
         fname = (os.getcwd() + f"\\{file_name}.xls").replace('\\', '\\') #ищем файл со старым расширением
@@ -93,10 +101,10 @@ def main_open(group, file_name, function):
     sheet = wb.active
 
     last_time = find_last_time(group, sheet)
-    print('[Test]Файл', file_name, ' группа:', group)
+    print('[Test]Файл', file_name, ' группа:', group, 'лист:', sheet.title)
     if type(last_time) != type(None):
         if function == 'Расписание':
-            return read_file(group, sheet, last_time)
+            return read_file(group, sheet, last_time, merge)
         elif function == 'Узнать на какой день недели парсить замены':
             otvet = read_weekday(last_time)
             return otvet
@@ -108,33 +116,39 @@ def main_open(group, file_name, function):
 
 
 
-def read_file(group, sheet, last_time):
+def read_file(group, sheet, last_time, merge):
     
     
     to_day_or_not_today = ''
     
     #текущее время
-    now = datetime.datetime.now()
+    offset = datetime.timezone(datetime.timedelta(hours=3))
+    now = datetime.datetime.now(offset)
     now = now.strftime("%H:%M")
 
     print('Текущее время:', now, 'Время окончания пары:', last_time)
     
     
 
-    """
-    # получаем день недели
-    if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
-        to_day_or_not_today = ' завтра'
-        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()+1)
+    
+    if weekday_list1.get(datetime.datetime.today().isoweekday()) != 'Воскресенье':
+        # получаем день недели
+        if now > last_time: #если последняя пара закончилась, то к дню недели прибовляем +1. Чтобы показать расписание на следующий день
+            to_day_or_not_today = ' завтра'
+            liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()+1)
+            print('Пары закончились, идет сравнение с расписанием на следущий день')
+        else:
+            to_day_or_not_today = ' сегодня'
+            liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+
+
+        if liva_weekday == 'Воскресенье':
+            liva_weekday = 'Понедельник'
     else:
-        to_day_or_not_today = ' сегодня'
-        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
-
-
-    if liva_weekday == 'Воскресенье':
-        liva_weekday = 'Понедельник'
-
-    """
+        print("Сегодня воскресенье")
+        to_day_or_not_today = ' завтра'
+        liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday()-6)
+    
     liva_weekday = 'Пятница'
     print('Будет показано расписание на: ', liva_weekday)
 
@@ -224,15 +238,21 @@ def read_file(group, sheet, last_time):
                                                             
                                                             result = [line.rstrip() for line in result] #удаляем символы \n из строки результата
                                                             
+                                                            result2 = result
+
                                                             result = [f'\n {j}' for j in result] # добавляем переносы перед каждым пунктом
 
                                                             result = [f'\n\n&#128341;{to_day_or_not_today.title()} в ' + time[0][:5]] + result
                                                             result = ['Расписание на ' + to_day_or_not_today] + result
                                                             
+                                                            if not merge:
+                                                                print('\nРЕЗУЛЬТАТ:', result)
 
-                                                            print('\nРЕЗУЛЬТАТ:', result)
+                                                                return (result)
+                                                            elif merge:
+                                                                print('\nРЕЗУЛЬТАТ2:', result2)
 
-                                                            return (result)
+                                                                return (result2)
                                                             
                                                             
                                                             
@@ -246,6 +266,8 @@ def read_file(group, sheet, last_time):
 
 def find_last_time(group, sheet):
     liva_weekday = weekday_list1.get(datetime.datetime.today().isoweekday())
+    if liva_weekday == 'Воскресенье':
+        liva_weekday = 'Понедельник'
     for number in a: #цифры/строки
         for key in a_dict: #буквы/столбцы
             if type(sheet[key + str(number)].value) != type(None): #если ячейка не пустая
@@ -287,5 +309,3 @@ def find_last_time(group, sheet):
                                                             print('\nКонец в', time[-1][-5:])
                                                             
                                                             return (time[-1][-5:])
-
-
