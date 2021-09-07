@@ -1,6 +1,6 @@
 import re
 
-def merge(Mschedule, Msubstitutions, Mtime):
+def merge(Mschedule, Msubstitutions, Mtime, to_day_or_not_today):
     print('---------------------------------------------------')
     print('СЛИЯНИЕ Время:',Mtime)
     w = []

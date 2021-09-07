@@ -252,7 +252,7 @@ def read_file(group, sheet, last_time, merge):
                                                             elif merge:
                                                                 print('\nРЕЗУЛЬТАТ2:', result2)
 
-                                                                return (result2)
+                                                                return result2
                                                             
                                                             
                                                             
