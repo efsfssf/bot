@@ -1,2 +1,3 @@
-tok = 'b3f2e1d36f43fd4b52fe7c4147538179e1793b858cb4a397568ee3f69edbf5ee1c4c57e538dc7815eef05'
-bot_id = '206674494'
+tok = 'ТУТ ТОКЕН ВК'
+bot_id = 'ТУТ ID ГРУППЫ'
+token_telegram = 'ТУТ ТОКЕН ТГ'

@@ -1,10 +1,11 @@
+# coding=utf-8
 from docx import Document
 from dateutil import parser
 from itertools import groupby
 import os, locale, re
 
 def read_weekday(filename):
-    wordDoc = Document(os.getcwd() + f"\\{filename}")
+    wordDoc = Document(os.getcwd() + f"/{filename}.docx")
     #заменяем название в файле:
     if filename.find('января') != -1:
         filename = filename.replace('января', 'January')
@@ -35,8 +36,10 @@ def read_weekday(filename):
     weekday_list1 = {value:key for key, value in weekday_list.items()}
 
     #получаем на какой день недели расписание
-    locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
-    extr_date = re.search("(\d+.+?)_г", filename).group(1).replace("_"," ")
+    locale.setlocale(locale.LC_TIME, 'ru_RU.utf8')
+
+    print('Файл',filename)
+    extr_date = re.search("(\d+.+?)г", filename).group(1)
     week_day = parser.parse(extr_date).weekday()+1
 
     #получаем день недели в виде букв
@@ -45,7 +48,7 @@ def read_weekday(filename):
     return liva_weekday
 
 def read_file(group, filename, merge):
-    wordDoc = Document(os.getcwd() + f"\\{filename}")
+    wordDoc = Document(os.getcwd() + f"/{filename}.docx")
     #заменяем название в файле:
     if filename.find('января') != -1:
         filename = filename.replace('января', 'January')
@@ -76,8 +79,9 @@ def read_file(group, filename, merge):
     weekday_list1 = {value:key for key, value in weekday_list.items()}
 
     #получаем на какой день недели расписание
-    locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
-    extr_date = re.search("(\d+.+?)_г", filename).group(1).replace("_"," ")
+    locale.setlocale(locale.LC_TIME, 'ru_RU.utf8')
+
+    extr_date = re.search("(\d+.+?)г", filename).group(1)
     week_day = parser.parse(extr_date).weekday()+1
 
     #получаем день недели в виде букв
@@ -87,6 +91,7 @@ def read_file(group, filename, merge):
     Substitutions = []
     Substitutions2 = []
     name = []
+    nameNEW = []
     time = []
     result = []
     for table in wordDoc.tables:
@@ -96,11 +101,11 @@ def read_file(group, filename, merge):
                 s2 = row.cells[4].text
 
                 patter = r'[А-ЯЁа-яё]+\s[А-ЯЁа-яё]{1}\.\s*[А-ЯЁа-яё]{1}\.\s*\/*\s*[А-ЯЁа-яё]*\s*[А-ЯЁа-яё]*\.*\s*[А-ЯЁа-яё]*\.*' # ищем фамилии
-                
+
                 if type(re.findall(patter, s)) != type(None) or s != 'н/б' or type(re.findall(patter, s2)) != type(None) or s2 != 'н/б':
                     name.append(re.findall(patter, s)) # заносим найденные фамилии в ячейках s в список name
-                    name.append(re.findall(patter, s2)) # заносим найденные фамилии в ячейках s2 в список name
-                
+                    nameNEW.append(re.findall(patter, s2)) # заносим найденные фамилии в ячейках s2 в список name
+
                 s = re.sub(r'\([^()]*\)', '', s)
                 s2 = re.sub(r'\([^()]*\)', '', s2)
 
@@ -109,17 +114,15 @@ def read_file(group, filename, merge):
                     time.append(re.findall(patterTIME, s2))
                     s2 = re.sub(patterTIME, '', s2)
                     s2 = s2.replace('Занятия с ', '')
-                
+
                 s = eval('"' + s.replace('\n','') + '"')
                 s2 = eval('"' + s2.replace('\n','') + '"')
 
-                
                 Substitutions2.append(row.cells[1].text + '. ' + s2 )
-
                 Substitutions.append('\n' + row.cells[1].text + '. ' + '&#0822;' + '&#0822;'.join(s)  + s2 )
-        
 
-    
+
+
 
     #ФОРМАТИРУМ МАТРИЦУ С ФАМИЛИЯМИ
     name = ([x for x in name if x])
@@ -128,7 +131,22 @@ def read_file(group, filename, merge):
 
     name = [line.rstrip() for line in name] #удаляем символы \n из строки фамилий
 
-    print('NAME:', name)
+    print('NAME:', name, 'TIME:', time)
+
+    #ФОРМАТИРУМ МАТРИЦУ С ФАМИЛИЯМИ НОВЫХ ПАР
+    nameNEW = ([x for x in nameNEW if x])
+    nameNEW = [el for el, _ in groupby(nameNEW)]
+    nameNEW = sum(nameNEW, [])
+
+    nameNEW = [line.rstrip() for line in nameNEW] #удаляем символы \n из строки фамилий
+
+    count = 0
+    for item_i in range(len(Substitutions2)):
+        #print('Расписание', len(Substitutions2[item_i]), ' Имена', len(nameNEW[count]))
+        Substitutions2[item_i] += '  (' + (nameNEW[count] if type(nameNEW[count]) != type(None) else 'Нет') + ')' #добавляем скобки
+        count += 1
+
+    print(Substitutions2)
 
     if time:
         #ФОРМАТИРУМ МАТРИЦУ С ВРЕМЕНЕМ
@@ -152,4 +170,5 @@ def read_file(group, filename, merge):
         print('Замены2:', Substitutions2)
         return Substitutions2, time if time else 'Пусто'
 
-
+#read_weekday('Замена на 13 сентября 2021 г.')
+#read_file('4исп-9', 'Замена на 12 октября 2021 г.', True)
