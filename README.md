@@ -25,7 +25,7 @@ AGENT №11 Bot разрабатывался для парсинга табли�
 while True:
     try:
         pass
-except requests.exceptions.Timeout:
+except:
         time.sleep(60)
         pass
 ```
