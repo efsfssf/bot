@@ -1,4 +1,4 @@
-import re, copy, datetime, read_excel
+import re, copy, datetime
 time_schedule = {'08:00 - 09:30':1,'09:40 - 11:10':2,'11:30 - 13:00':3,'13:10 - 14:40':4,'15:00 - 16:30':5,'16:40 - 18:10':6,'18:20 - 19:50':7}
 time_schedule1 = {value:key for key, value in time_schedule.items()}
 weekday_list = {"Понедельник":1,"Вторник":2,"Среда":3,"Четверг":4,"Пятница":5,"Суббота":6,"Воскресенье":7}
@@ -17,7 +17,6 @@ def read_weekday(weekday):
 
 def merge(Mschedule, Msubstitutions, Mtime, schedule):
     print('---------------------------------------------------')
-    
     print('СЛИЯНИЕ Время:',Mtime, 'Расписание', Mschedule, 'Замены', Msubstitutions, 'День недели', schedule, 'Сегодня', weekday_list1.get(datetime.datetime.today().isoweekday()), 'liva_weekday', read_weekday(schedule))
     to_day_or_not_today = read_weekday(schedule)
     w = []

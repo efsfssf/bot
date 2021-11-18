@@ -99,7 +99,7 @@ def read_file(group, filename, merge):
             if group.upper() in row.cells[0].text:
                 s = row.cells[2].text
                 s2 = row.cells[4].text
-
+                print(s, s2)
                 patter = r'[А-ЯЁа-яё]+\s[А-ЯЁа-яё]{1}\.\s*[А-ЯЁа-яё]{1}\.\s*\/*\s*[А-ЯЁа-яё]*\s*[А-ЯЁа-яё]*\.*\s*[А-ЯЁа-яё]*\.*' # ищем фамилии
 
                 if type(re.findall(patter, s)) != type(None) or s != 'н/б' or type(re.findall(patter, s2)) != type(None) or s2 != 'н/б':
@@ -142,8 +142,7 @@ def read_file(group, filename, merge):
 
     count = 0
     for item_i in range(len(Substitutions2)):
-        #print('Расписание', len(Substitutions2[item_i]), ' Имена', len(nameNEW[count]))
-        Substitutions2[item_i] += '  (' + (nameNEW[count] if type(nameNEW[count]) != type(None) else 'Нет') + ')' #добавляем скобки
+        Substitutions2[item_i] += '  (' + nameNEW[count] + ')' #добавляем скобки
         count += 1
 
     print(Substitutions2)
@@ -171,4 +170,4 @@ def read_file(group, filename, merge):
         return Substitutions2, time if time else 'Пусто'
 
 #read_weekday('Замена на 13 сентября 2021 г.')
-#read_file('4исп-9', 'Замена на 12 октября 2021 г.', True)
+read_file('4исп-9', 'Замена на 15 ноября 2021 г.', True)

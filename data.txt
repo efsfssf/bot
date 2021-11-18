@@ -1,22 +1,22 @@
 [
     {
-        "title": "Замена на 14 октября 2021 г.",
-        "link": "http://academicol.ru/https://docs.google.com/viewer?url=http://academicol.ru/upload/price/postoynnoe_spo/para/Замена_на_14_октября_2021_г..docx"
+        "title": "Расписание экзаменов 3ПД-11, 4ПД-9 (09.11, 12.11,15.11.2021)",
+        "link": "http://academicol.ru/https://docs.google.com/viewer?url=http://academicol.ru/upload/price/postoynnoe_spo/para/Расписание_экзаменов_3ПД-11,_4ПД-9_(09.11,_12.11,15.11.2021).doc"
     },
     {
-        "title": "Замена на 15 октября 2021 г.",
-        "link": "http://academicol.ru/https://docs.google.com/viewer?url=http://academicol.ru/upload/price/postoynnoe_spo/para/Замена_на_15_октября_2021_г..docx"
+        "title": "Расписание занятий 2-4 курсов с 01.11.21 (2 поток)",
+        "link": "http://academicol.ru//upload/price/postoynnoe_spo/para/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9_2-4_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_01.11.21_%282_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%29.xls"
     },
     {
-        "title": "Расписание занятий 1-2 курсов с 07.10.21 (1 поток)",
-        "link": "http://academicol.ru//upload/price/postoynnoe_spo/para/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9_1-2_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_07.10.21_%281_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%29.xls"
+        "title": "Расписание занятий для 1 курсов с 01.11.21",
+        "link": "http://academicol.ru//upload/price/postoynnoe_spo/para/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9_%D0%B4%D0%BB%D1%8F_1_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_01.11.21.xls"
     },
     {
-        "title": "Расписание занятий 2-4 курсов с 12.10.21 (2 поток)",
-        "link": "http://academicol.ru//upload/price/postoynnoe_spo/para/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9_2-4_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_12.10.21_%282_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%29.xls"
+        "title": "Замена на 15 ноября 2021 г.",
+        "link": "http://academicol.ru/https://docs.google.com/viewer?url=http://academicol.ru/upload/price/postoynnoe_spo/para/Замена_на_15_ноября_2021_г..docx"
     },
     {
-        "title": "Расписание занятий для 1 курсов с 13.09.21",
-        "link": "http://academicol.ru//upload/price/postoynnoe_spo/para/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9_%D0%B4%D0%BB%D1%8F_1_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_13.09.21.xls"
+        "title": "Расписание занятий 1-2 курсов с 01.11.21 (1 поток)",
+        "link": "http://academicol.ru//upload/price/postoynnoe_spo/para/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9_1-2_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D1%81_01.11.21_%281_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%29.xls"
     }
 ]

@@ -1,4 +1,3 @@
-# coding: utf-8
 from sys import version
 import telebot, re, requests
 from telebot import types
@@ -9,7 +8,7 @@ import os
 import sys
 
 #версия бота (для обноваления)
-version_current = '0.11.2.0'
+version_current = '0.11.1.0'
 
 # инициализируем соединение с БД | TELEGRAM
 db_TELEGRAM = SQLighter_TELEGRAM('ak_colladge_TELEGRAM.db')
@@ -88,46 +87,11 @@ def main(message):
     if message.chat.type == 'private' or message.chat.type == 'group':
         if (message.text).lower() == '/расписание' or message.text == '/schedule' or message.text == '/schedule@agent11bot':
             bot.send_message(message.chat.id, (''.join(ps.parse(str(droup_for_db), 'Расписание', False, True, 'нет'))).replace('&#128341;', '🕙').replace('&#128260;', '🔄'))
-        elif (message.text).lower() == '/расписание-' or message.text == '/schedule-' or message.text == '/ScheduleIsUnchanged' or message.text == '/schedule-@agent11bot':
-            bot.send_message(message.chat.id, (''.join(ps.parse(str(droup_for_db), 'Расписание', False, False, 'нет'))).replace('&#128341;', '🕙').replace('&#128260;', '🔄'))
-            bot.send_message(message.chat.id, 'Без учёта возможных замен')
-        elif (message.text).lower() == '/расписание+' or message.text == '/schedule+' or message.text == '/SchedulePlus' or message.text == '/schedule+@agent11bot':
-            markup_Inline = types.InlineKeyboardMarkup(row_width=2)
-            item1_1_Inline = types.InlineKeyboardButton("Понедельник")
-            item1_Inline = types.InlineKeyboardButton("Вторник", callback_data='Tuesday')
-            item2_Inline = types.InlineKeyboardButton("Среда", callback_data='Wednesday')
-            item3_Inline = types.InlineKeyboardButton("Четверг", callback_data='Thursday')
-            item4_Inline = types.InlineKeyboardButton("Пятница", callback_data='Friday')
-            item5_Inline = types.InlineKeyboardButton("Суббота", callback_data='Saturday')
-            markup_Inline.add(item1_1_Inline, item1_Inline, item2_Inline, item3_Inline, item4_Inline, item5_Inline)
-            bot.send_message(message.chat.id, 'Выбери день недели', reply_markup=markup_Inline)
         elif (message.text).lower() == '/debug' or message.text == '/debug@agent11bot':
             bot.send_message(message.chat.id, f'Отладочная информация: \n\n Основная: {db_TELEGRAM.get_chats(message.chat.id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code} \nСписок домашних заданий: \nweather connect status: \nВерсия бота: beta {version_current} \n\nОсновано на Аген №11 VK BOT create by Alexey Orlov')
-        elif (message.text).lower() == '/следующий день' or (message.text).lower() == '/nextday' or message.text == '/nextday@agent11bot':
+        elif (message.text).lower() == '/следующий день' or message.text == '/следующий день@agent11bot':
             bot.send_message(message.chat.id, (''.join(ps.parse(str(droup_for_db), 'Расписание', True, False, 'нет'))).replace('&#128341;', '🕙'))
             bot.send_message(message.chat.id, 'Без учёта возможных замен')
-        elif (message.text).lower() == '/замена' or message.text == '/replacement@agent11bot':
-            content = ''.join(ps.parse(droup_for_db, 'Замена', False, False))
-            bot.send_message(message.chat.id, content)
-        elif (message.text).lower() == '/list' or (message.text).lower() == '/help' or message.text == '/list@agent11bot':
-            content = f'&#128210;Список команд: \n*********************\n\n/ScheduleIsUnchanged или /Расписание- — расписание без замен \n/SchedulePlus или /Расписание+ — расписание на любой день недели \n/nextDay или /Следующий день - расписание на следующий день без замен\n/bellRang или /звонки — показывает список звонков \n/Звонки Завтра — показывает список звонков на следующий день \n/change или /Перемены — показывает список перемен \n/downloadAST или /Скачать AST — бот даст ссылку на AST-Test \n/Пароли AST — Скоро \n/download1C или /Скачать 1C — бот даст ссылку на 1C'
-            bot.send_message(message.chat.id, content)
-        elif (message.text).lower() == '/bellrang' or (message.text).lower() == '/звонки':
-            content = '08:00 - 09:30 \n09:40 - 11:10 \n11:30 - 13:00 \n13:10 - 14:40 \n15:00 - 16:30 \n16:40 - 18:10 \n18:20 - 19:50'
-            bot.send_message(message.chat.id, content)
-        elif (message.text).lower() == '/change' or (message.text).lower() == '/перемены':
-            content = '09:30 - 09:40  \n11:10 - 11:30 \n13:00 - 13:10\n14:40 - 15:00\n16:30 - 16:40\n18:10 - 18:20'
-            bot.send_message(message.chat.id, content)
-        elif (message.text).lower() == '/downloadast' or (message.text).lower() == '/скачать ast':
-            markup1 = types.InlineKeyboardMarkup()
-            item1_1 = types.InlineKeyboardButton("Скачать", url='http://lk.volbi.ru/files/documenti/setup_AST-Test_Player_4.3.7.2.exe')
-            markup1.add(item1_1)
-            bot.send_message(message.chat.id, 'AST-Test Player \nВерсия: 4.3.7.2 \nС сайта АНПОО "Академический колледж" \nРазмер:10.1 МБ', reply_markup=markup1)
-        elif (message.text).lower() == '/download1c' or (message.text).lower() == '/скачать 1c':
-            markup1 = types.InlineKeyboardMarkup()
-            item1_1 = types.InlineKeyboardButton("Скачать", url='https://turb.to/2630vu4bnwiy/8.3.16.1296_Windows_RePack_x64.rar.html')
-            markup1.add(item1_1)
-            bot.send_message(message.chat.id, '1С:Предприятие \nВерсия: 8.3.16.1296 RePack \nТип установки: простая установка x64 \nРазмер:425 МБ', reply_markup=markup1)
         elif (message.text).lower() == '/update':
             f = open('version.txt', encoding="utf-8")
             version_server = f.read()

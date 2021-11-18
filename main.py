@@ -10,7 +10,7 @@ from vktools import Carousel, Element, Text, ButtonColor
 # VK
 vk_session = vk_api.VkApi(token = tok)
 
-longpoll = VkBotLongPoll(vk_session, bot_id)
+longpoll = VkBotLongPoll(vk_session, bot_id, wait=25)
 
 CALLBACK_TYPES = ('show_snackbar', 'open_link', 'open_app')
 
@@ -103,7 +103,10 @@ while True:
                         keyboard = VkKeyboard(inline=True)
                         keyboard.add_button("Следующий день")
                         #keyboard.add_callback_button(label='Есть ли замены', payload={"type": "show_snackbar", "text": content})
-                        sender(id, ''.join(ps.parse('4исп-9', 'Расписание', False, True, 'нет')), keyboard=keyboard.get_keyboard())
+                        sender(id, '&#10071; Сообщение об окончании поддержки')
+                        #sender(id, ''.join(ps.parse('4исп-9', 'Расписание', False, True, 'нет')), keyboard=keyboard.get_keyboard())
+                        sender(id, ''.join(ps.parse(droup_for_db, 'Расписание', False, True, 'нет')))
+                        sender(id, 'Без учёта возможных замен')
                     elif msg == 'расписание -замена':
                         sender(id, ''.join(ps.parse(droup_for_db, 'Расписание', False, False, 'нет')))
                     elif msg == 'следующий день':
@@ -113,7 +116,7 @@ while True:
                         content = ''.join(ps.parse(droup_for_db, 'Замена', False, False))
                         sender(id, content)
                     elif msg == '/debug':
-                        sender(id, f'Отладочная информация: \n\n Основная: {db.get_chats(id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code} \nСписок домашних заданий: \nweather connect status: \nВерсия бота: beta 0.11.2.0')
+                        sender(id, f'Отладочная информация: \n\n Основная: {db.get_chats(id)} \nГруппа в базе данных: {droup_for_db.upper()} \nСтатус соединения: {(requests.get(ps.URL)).status_code} \nСписок домашних заданий: \nweather connect status: \nВерсия бота: beta 0.11.3.0')
                     elif msg == '/help' or msg == '/list':
                         content = f'&#128210;Список команд: \n*********************\n\n Расписание -замена — расписание без замен \n Расписание+ — расписание на любой день недели \nЗвонки — показывает список звонков \nЗвонки Завтра — показывает список звонков на следующий день \nПеремены — показывает список перемен \nСкачать AST — бот даст ссылку на AST-Test \nПароли AST — Скоро \nСкачать 1C — бот даст ссылку на 1C'
                         sender(id, content)
@@ -259,7 +262,7 @@ while True:
                     sender_CallBack(event.object.event_id, event.object.user_id, event.object.peer_id, json.dumps(event.object.payload))
             
             
-    except requests.exceptions.Timeout:
+    except:
         time.sleep(60)
         pass
 

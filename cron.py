@@ -103,7 +103,8 @@ class cronTask:
         print('Список файлов:', self.file_name_list)
         with open('listfile.txt', 'w', encoding="utf-8") as filehandle:  
             for listitem in self.file_name_list:
-                filehandle.write('%s\n' % listitem)
+                if not 'Расписание экзаменов' in listitem:
+                    filehandle.write('%s\n' % listitem)
 
 
 
@@ -123,7 +124,7 @@ class cronTask:
             self.done_sc = self.get_content(self.html.text)
             print('LINK', [[d['link']] for d in self.done_sc])
             
-            path = r"D:/бейкап/Desktop/bot0.9NEW/data.txt"
+            path = r"D:\\бейкап\\Desktop\\bot0.9NEW\\data.txt"
             assert os.path.isfile(path)
             jstr = json.dumps(self.done_sc, indent=4, ensure_ascii=False)
             with open(path, 'w', encoding="utf-8") as outfile:
